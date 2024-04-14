@@ -4,7 +4,7 @@
 
 <div align="center">
   <h1>Iniciando em Python</h1>
-  <p>Esses são alguns dos meus primeiros comando com uma nova linguagem</p>
+  <p>Esses são alguns dos meus primeiros comando com utilizando essa linguagem</p>
 </div>
   
 ##
