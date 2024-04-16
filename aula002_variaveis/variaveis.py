@@ -19,7 +19,7 @@ complexo = 3j # Python trabalha diretamente com números complexos
 PI = 3.14 # isso é uma CONSTANTE, seu valor não deve ser alterado
 
 # Saída utilizando o método type() para verificar o tipo da variável
-print('\033[0m \003[31mTipos declarados:\033[0m')
+print('\033[0m \003[31m Tipos declarados:\033[0m')
 print('\033[0m A var \033[32m nome \033[0m é do tipo: ', type(nome))
 print('\033[0m A var \033[32m nascimento \033[0m é do tipo: ', type(nascimento))
 print('\033[0m A var \033[32m altura \033[0m é do tipo: ', type(altura))
