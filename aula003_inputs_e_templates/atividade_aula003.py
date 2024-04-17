@@ -28,8 +28,8 @@ cidade = str(input('Em qual cidade você reside no momento? '))
 # Saída Interpolada
 print('-' * 70)
 print(f'Oi {nome}, você tem {idade} anos e possui {altura} de altura. ' 
-      + 'No momento seu status para realização de cursos é: {atividade}, '
-      + 'e reside na cidade de {cidade}.')
+      + f'No momento seu status para realização de cursos é: {atividade}, '
+      + f'e reside na cidade de {cidade}.')
 
 print('-' * 70)
 
