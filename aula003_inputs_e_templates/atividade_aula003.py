@@ -34,10 +34,11 @@ print(f'Oi {nome}, você tem {idade} anos e possui {altura} de altura. '
 print('-' * 70)
 
 # Saída dos tipos das variáveis
-print('A variável nome é do tipo..:', type(nome))
-print('A variável idade é do tipo.:', type(idade))
-print('A variável altura é do tipo:', type(altura))
-print('A variável cidade é do tipo:', type(cidade))
+print('A variável nome é do tipo.....:', type(nome))
+print('A variável idade é do tipo....:', type(idade))
+print('A variável altura é do tipo...:', type(altura))
+print('A variável atividade é do tipo:', type(atividade))
+print('A variável cidade é do tipo...:', type(cidade))
 
 print('-' * 70)
 print('')
