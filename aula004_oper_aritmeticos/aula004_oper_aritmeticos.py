@@ -38,11 +38,20 @@ print('-' * 70)
 dividendo = float(input('Entre com o dividendo: '))
 divisor = float(input('Entre com o divisor: '))
 
+print()
+print('--- Raizes')
+print('-' * 70)
+radicando = float(input('Insira um valor para calcular a raiz quadrada: '))
+indice = float(input('Insira o índice da raiz: ')) 
+
 # Processamento
 soma = parcela_1 + parcela_2
 diferenca = minuendo - subtraendo
 produto = multiplicando * multiplicador
 quociente = dividendo / divisor
+raiz_quadrada = radicando ** (1/2)
+raiz_cubica = radicando ** (1/3) 
+raiz_indice = radicando ** (1/indice)
 
 # Saída
 print('=' * 70)
@@ -50,3 +59,12 @@ print('RESULTADOS')
 print('-' * 70)
 print(f'A soma de {parcela_1} + {parcela_2} é: {soma}')
 print(f'A subtração de {minuendo} - {subtraendo} é: {diferenca}')
+print(f'A multiplicação de {multiplicando} x {multiplicador} é: {produto}')
+print(f'A divisão de {dividendo} / {divisor} é: {quociente}')
+
+# Saída das raizes
+print(f'A raiz quadrada do valor {radicando} é: {raiz_quadrada}')
+print(f'A raiz cúbica do valor {radicando} é: {raiz_cubica}')
+print(f'A raiz de indice: {indice} e de radicando: {radicando} é: {raiz_indice}')
+
+# FIM
