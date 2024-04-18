@@ -23,8 +23,8 @@ media = nota1 + nota2 + nota3 + nota4 / 4
 media_correta = (nota1 + nota2 + nota3 + nota4) / 4
 
 print('-' * 5 + 'NOTAS' + '-' * 5)
-print(f'Nota 1: {nota1}, Nota 2: {nota2} | '
-      + f'Nota 3: {nota3} e Nota 4: {nota4}')
+print(f'Nota 1: {nota1}| Nota 2: {nota2} | '
+      + f'Nota 3: {nota3}| Nota 4: {nota4}')
 print('-' * 70)
 print(f'Média errada: {media}')
 print(f'Média correta: {media_correta}')
