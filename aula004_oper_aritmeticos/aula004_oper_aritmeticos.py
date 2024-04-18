@@ -39,7 +39,7 @@ dividendo = float(input('Entre com o dividendo: '))
 divisor = float(input('Entre com o divisor: '))
 
 print()
-print('--- Raizes')
+print('--- RAÍZES')
 print('-' * 70)
 radicando = float(input('Insira um valor para calcular a raiz quadrada: '))
 indice = float(input('Insira o índice da raiz: ')) 
