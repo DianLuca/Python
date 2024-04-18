@@ -22,7 +22,7 @@ nome = input('Insira o seu nome: ')
 idade = int(input('Insira sua idade: '))
 altura = float(input('Insira sua altura em metros: '))
 atividade = bool(input('Você está fazendo algum curso no' 
-+ 'momento?(Insira True ou False)'))
+                       + 'momento?(Insira True ou False)'))
 cidade = str(input('Em qual cidade você reside no momento? '))
 
 # Saída Interpolada
