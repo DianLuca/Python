@@ -20,11 +20,11 @@ base = float(input('Insira a base do retângulo (em cm): '))
 altura = float(input('Insira a altura do retângulo (em cm): '))
 
 # Processamento
-perimetro = 2*(base + altura)
+perimetro_retangulo = 2*(base + altura)
 
 # Saída
 print('-' * 70)
 print('-- RESULTADO')
 print('=' * 70)
-print(f'O perímetro de um retangulo de base: {base}cm e altura: {altura}cm '
-      + f'é de: {perimetro}cm')
+print(f'O perímetro de um retângulo de base: {base:.2f} cm e altura: '
+      + f'{altura:.2f} cm é de: {perimetro_retangulo:.2f} cm')
