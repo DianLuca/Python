@@ -25,5 +25,5 @@ sucessor = valor + 1
 # Saída
 print('-' * 70)
 print('--- RESULTADO')
-print(f'O antessessor e o sucessor do valor: {valor}, são os seguintes' 
+print(f'O antessessor e o sucessor do valor: {valor}, são os seguintes ' 
       + f'respectivamentes: {antecessor} e {sucessor}')
