@@ -23,5 +23,8 @@ dobro = valor * 2
 triplo = valor * 3
 
 # Saída
+print('-' * 70)
+print('--- RESULTADO')
+print('=' * 70)
 print(f'O dobro e o triplo do valor {valor} são respectivamente: '
       + f'{dobro} e {triplo}')
