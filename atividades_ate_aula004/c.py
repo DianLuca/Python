@@ -2,7 +2,8 @@
 # Turma 0152
 # Autor: Dian Luca Valente Nascimento
 # Data: 19/04/2024
-# Faça um programa que peça 4 notas, após a entrada de dados calcular a média das notas digitadas.
+# Faça um programa que peça 4 notas, após a entrada de dados calcular a 
+# média das notas digitadas.
 
 # import
 import os

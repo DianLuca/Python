@@ -2,7 +2,8 @@
 # Turma 0152
 # Autor: Dian Luca Valente Nascimento
 # Data: 19/04/2024
-# Faça um programa que peça 3 valores , depois calcule e imprima  a soma e a multiplicação desses valores.
+# Faça um programa que peça 3 valores , depois calcule e imprima  a 
+# soma e a multiplicação desses valores.
 
 # imports
 import os

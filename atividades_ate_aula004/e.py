@@ -2,7 +2,8 @@
 # Turma 0152
 # Autor: Dian Luca Valente Nascimento
 # Data: 19/04/2024
-# Faça um programa que receba um número inteiro e mostre o sucessor e antecessor.
+# Faça um programa que receba um número inteiro e mostre o sucessor 
+# e antecessor.
 
 # imports
 import os
