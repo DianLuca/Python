@@ -19,7 +19,8 @@ resposta = ''
 
 # Condicional
 if valor % 2 == 0:
-    resposta = f'Entrada incorreta, o valor {int(valor)} é um inteiro!'
+    valor = int(valor)
+    resposta = f'Entrada incorreta, o valor {valor} é um inteiro!'
 else:
     resposta = f'Entrada correta, o valor {valor} é um decimal!'
 
