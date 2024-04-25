@@ -19,10 +19,9 @@ resposta = ''
 
 # Condicional
 if valor % 2 == 0:
-    valor = int(valor)
-    resposta = f'Entrada incorreta, o valor {valor} é um inteiro!'
+    resposta = f'Entrada incorreta, o valor {valor} é par!'
 else:
-    resposta = f'Entrada correta, o valor {valor} é um decimal!'
+    resposta = f'Entrada correta, o valor {valor} é um ímpar!'
 
 # Saída
 print('=' * 70)
