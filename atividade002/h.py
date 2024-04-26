@@ -10,3 +10,23 @@
 # Essas raízes são conhecidas como 𝑥’ = 5 e 𝑥’’ = 1, e o programa deve ser 
 # capaz de calcular essas raízes de forma precisa, seguindo os princípios 
 # matemáticos fundamentais.
+
+# Import
+import os
+
+
+os.system('cls')
+
+# Declarações
+raiz_quadrada = 1/2
+x1 = 5
+x2 = 1
+
+# Processamento
+calculo_5 = (x1**2 - 6*x1 + 5)/ raiz_quadrada
+calculo_1 = (x2**2 - 6*x2 + 5)/ raiz_quadrada
+outro_calculo = (x1**2 - 6*x2 + 5)/ raiz_quadrada
+
+# Saída
+print(f'{calculo_5:.2f} e {calculo_1:.2f}')
+print(outro_calculo)
