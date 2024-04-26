@@ -1,7 +1,7 @@
 # Curso de Desenvolvimento de Sistemas
 # Turma 0152
 # Autor: Dian Luca Valente Nascimento
-# Data: 19/04/2024
+# Data: 26/04/2024
 # H) A empresa "RootCalc" está desenvolvendo um software de cálculo de raízes
 # de equações quadráticas para auxiliar engenheiros e cientistas em suas 
 # análises e projetos. Eles precisam de um programa que calcule as raízes da 
