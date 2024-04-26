@@ -12,7 +12,8 @@ if velocidade_usuario < velocidade_limite:
 elif velocidade_usuario == velocidade_limite:
     resposta = f'Você está no limite de velocidade permitido.'
 else:
-    resposta = f'A velocidade máxima permitida da via é {velocidade_limite} Km/h, reduza a velocidade.'
+    resposta = f'A velocidade máxima permitida da via é' 
+    +f'{velocidade_limite} Km/h, reduza a velocidade.'
     
 print('-' * 70)
 print(resposta)
