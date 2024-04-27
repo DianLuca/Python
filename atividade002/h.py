@@ -18,15 +18,16 @@ import os
 os.system('cls')
 
 # Declarações
+# 𝑥²−6𝑥+5 onde, a = 1, b = -6 c = 5
 raiz_quadrada = 1/2
 x1 = 5
 x2 = 1
 
 # Processamento
-calculo_5 = (x1**2 - 6*x1 + 5)/ raiz_quadrada
-calculo_1 = (x2**2 - 6*x2 + 5)/ raiz_quadrada
-outro_calculo = (x1**2 - 6*x2 + 5)/ raiz_quadrada
+calculo_5 = (x1**2 - 6*x1 + 5) ** raiz_quadrada
+calculo_1 = (x2**2 - 6*x2 + 5) ** raiz_quadrada
+# outro_calculo = (x1**2 - 6*x2 + 5) ** raiz_quadrada
 
 # Saída
 print(f'{calculo_5:.2f} e {calculo_1:.2f}')
-print(outro_calculo)
+# print(outro_calculo)
