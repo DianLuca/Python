@@ -18,7 +18,7 @@ import os
 os.system('cls')
 
 # Declarações
-# 𝑥²−6𝑥+5 onde, a = 1, b = -6 c = 5
+# 𝑥²−6𝑥+5 onde a = 1, b = -6 c =6
 raiz_quadrada = 1/2
 x1 = 5
 x2 = 1
