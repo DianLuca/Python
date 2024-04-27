@@ -23,8 +23,8 @@ resposta = ''
 
 # Condicionais
 if ano < 0:
-    resposta = f'O {ano} inserido é um valor inválido'
-elif ano % 4 == 0:
+    resposta = f'O {ano} inserido não é válido'
+elif ((ano % 4 == 0) and (ano % 100 != 0) or (ano % 400 == 0)):
     resposta = f'O ano {ano} é um ano bissexto'
 else:
     resposta = f'O ano {ano} não é um ano bissexto'
