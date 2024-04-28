@@ -23,8 +23,8 @@ resposta = ''
 # Condicionais
 if (segmento1 <= 0 or segmento2 <= 0 or segmento3 <= 0):
     resposta = f'Não poderá ser um triângulo'
-elif  (segmento1 < (segmento2 + segmento3)) and (segmento2 < (segmento1 + \
-                    segmento3)) and ((segmento3 < (segmento1 + segmento2))):
+elif  ((segmento1 < (segmento2 + segmento3)) and (segmento2 < (segmento1 + \
+                    segmento3)) and (segmento3 < (segmento1 + segmento2))):
     resposta = f'Poderá ser um triângulo'
 else:
     resposta = (f'A soma dos valores: {segmento1}, {segmento2} e {segmento3}'
