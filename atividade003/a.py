@@ -18,7 +18,12 @@ if numero < 0:
     print(f'O {numero} não possuí uma raiz real, pois retornará um valor complexo')
 else:
     raiz = math.sqrt(numero)
-    if raiz == float:
-        print(f'A raiz de {numero} é igual a: {raiz:.2f}')
-    else:
-        print(f'A raiz de {numero} é igual a: {raiz:.0f}')
+    cima = math.ceil(raiz)
+    baixo = math.floor(raiz)
+    print(f'A raiz de {numero} é igual a: {raiz:.4f}, arredondando para cima: {cima:.2f} e para baixo: {baixo:.2f}')
+    # if raiz == float:
+        # cima = math.ceil(raiz)
+        # baixo = math.floor(raiz)
+        # print(f'A raiz de {numero} é igual a: {raiz}, arredondando para cima: {cima} e para baixo: {baixo}')
+    # else:
+        # print(f'A raiz de {numero} é igual a: {raiz:.2f}')
