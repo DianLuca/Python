@@ -17,15 +17,13 @@ print('-' * 70)
 numero = int(input('Insira um número de 1 a 10 e tente advinhar: '))
 print()
 
-lista_numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-numero_sorteado = random.choice(lista_numeros)
+numero_sorteado = random.randint(1, 10)
 
 if numero_sorteado == numero:
-    print(f'Você acertou! O número sorteado foi: {numero} ='
+    print(f'Você acertou! O número sorteado foi: {numero} = '
           + f'{numero_sorteado}.')
 else:
-    print(f'Não foi dessa vez, o número correto era {numero_sorteado}.'
+    print(f'Não foi dessa vez, o número correto era {numero_sorteado}. '
           + f'Tente novamente!')
 
 print()
