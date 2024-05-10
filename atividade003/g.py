@@ -21,13 +21,14 @@ c = float(input('Insira o valor de c: '))
 print()
 
 delta = b**2 - 4*a*c
+raiz_delta = math.sqrt(delta)
 
 if delta <= 0:
     print('Repita a operação, não se trata de uma equação de segundo grau pois' 
           + f'possui delta menor ou igual a 0')
 else:
-    x1 = (-b + math.sqrt(delta)) / (2*a)
-    x2 = (-b - math.sqrt(delta)) / (2*a)
+    x1 = (-b + raiz_delta) / (2*a)
+    x2 = (-b - raiz_delta) / (2*a)
     print(f'O resultado de x1 é: {x1} e de x2: {x2}')
 
 print()
