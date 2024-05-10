@@ -20,7 +20,7 @@ b = float(input('Insira o valor de b: '))
 c = float(input('Insira o valor de c: '))
 print()
 
-delta = b**2 - 4*a*c
+delta = math.pow(b, 2) - 4*a*c
 
 if delta <= 0:
     print('Repita a operação, não se trata de uma equação de segundo grau pois' 
