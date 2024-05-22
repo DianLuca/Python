@@ -10,6 +10,6 @@ os.system('cls')
 nome = input('Insira um nome: ')
 
 if 'Oliveira' in nome:
-    print(bool('Oliveira'))
+    print(bool())
 else:
     print(bool())
