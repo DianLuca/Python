@@ -19,7 +19,7 @@ print(f'A frase toda minúscula será: "{minuscula}", toda maiúscula: '
       + f'"{maiuscula}" e possui {contagem} caracteres.')
 
 lista = frase.split(' ')
-palavra = ''.join(lista[1:2])
+palavra = ''.join(lista[1])
 contagem_segunda_palavra = len(palavra)
-print(f'A segunda palavra da frase é: {lista[1:2]} e possui: '
+print(f'A segunda palavra da frase é: "{lista[1]}" e possui: '
       + f'{contagem_segunda_palavra}  caracteres.')
