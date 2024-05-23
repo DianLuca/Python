@@ -6,14 +6,16 @@ import os
 
 os.system('cls')
 
-frase = input('Insira uma frase: ')
+frase = input('Insira uma frase: ').lower()
 
-vogal = 'aeiouAEIOU'
+letra_a = frase.count('a')
+letra_e = frase.count('e')
+letra_i = frase.count('i')
+letra_o = frase.count('o')
+letra_u = frase.count('u')
 
-conta = frase.count(vogal)
-print(conta)
+soma_caracteres = letra_a + letra_e + letra_i + letra_o + letra_u
 
-# if 'aeiouAEIOU' in frase:
-    # print(f'A frase "{frase}" possui caracteres que são vogais.')
-# else:
-    # print('Corrigir o código!')
+print(f'As vogais aparecem: \n VOGAL A(a): {letra_a} \n VOGAL E(e): {letra_e}'
+      + f'\n VOGAL I(i): {letra_i} \n VOGAL O(o): {letra_o} \n '
+      + f'VOGAL U(u): {letra_u} \n e somam {soma_caracteres} caracteres')
