@@ -12,8 +12,9 @@ os.system('cls')
 
 nome = input('Insira o seu nome: ').lower()
 
+quantidade_o = nome.count('o')
 primeira_aparicao = nome.find('o') + 1
 ultima_aparicao = nome.rfind('o') + 1
 
-print(f'A primeira aparição da letra "o" é: {primeira_aparicao}'
-      + f' e da última: {ultima_aparicao}')
+print(f'O nome possui {quantidade_o} no nome e a primeira aparição da letra'
+      + f' "o" é: {primeira_aparicao} e da última: {ultima_aparicao}')
