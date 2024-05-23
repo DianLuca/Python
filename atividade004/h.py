@@ -15,5 +15,5 @@ nome = input('Insira o seu nome: ').lower()
 primeira_aparicao = nome.find('o') + 1
 ultima_aparicao = nome.rfind('o') + 1
 
-print(f'A primeira aparição da letra "o" é: {primeira_aparicacao}'
+print(f'A primeira aparição da letra "o" é: {primeira_aparicao}'
       + f' e da última: {ultima_aparicao}')
