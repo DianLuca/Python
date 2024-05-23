@@ -13,7 +13,7 @@ os.system('cls')
 nome = input('Insira o seu nome: ').lower()
 
 primeira_aparicacao = nome.find('o') + 1
-ultima_aparicao = len(nome) - nome[::-1].find('o')
+ultima_aparicao = nome.rfind('o') + 1
 
 print(f'A primeira aparição da letra "o" é: {primeira_aparicacao}'
       + f' e da última: {ultima_aparicao}')
