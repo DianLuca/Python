@@ -16,4 +16,4 @@ lista = nome_completo.split()
 primeiro_nome = lista[0]
 ultimo_nome = lista[-1]
 
-print(f'Primeiro Nome: {primeiro_nome}\n Último Nome: {ultimo_nome}')
+print(f'Primeiro Nome: {primeiro_nome} \nÚltimo Nome..: {ultimo_nome}')
