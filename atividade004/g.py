@@ -18,4 +18,5 @@ dezenas = (numero // 10) % 10
 centenas = (numero // 100) % 10
 milhares = (numero // 1000) % 10
 
-print(f'As unidades de "{numero}": {unidades}, as dezenas: {dezenas}, as centenas: {centenas} e os milhares: {milhares}')
+print(f'O número: "{numero}" possui {unidades} unidade(s), {dezenas} '
+      + f'dezena(s), {centenas} centena(s) e {milhares} milhar(es)')
