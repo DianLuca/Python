@@ -6,7 +6,18 @@ import os
 
 os.system('cls')
 
-nome = 'João da Silva'
+nome = input('Insira um nome: ').lower()
 
-substituicao = nome.replace('da Silva', 'Oliveira')
-print(f'O nome original é: {nome} e passará a ser: {substituicao}')
+print(nome)
+print()
+print(nome.replace(' ',''))
+print()
+# Validação
+if not (nome.replace(' ','').isalpha()):
+    print('O item possui um caracter inválido!')
+elif 'silva' in nome:
+    substituicao = nome.replace('silva', 'Oliveira')
+    print(f'O nome original é: {nome.title().strip()} e passará a ser: {substituicao.title().strip()}')
+else:
+    print(f'Não foi encontrado o nome "Silva" para realizar a substituição.')
+    
