@@ -13,4 +13,3 @@
 <p>Este projeto requer Python 3.7 ou superior. Você também precisará de um editor de texto ou uma IDE para escrever e editar os scripts Python.</p>
 
 ##
-Verificando alteração do local de reposítorio
