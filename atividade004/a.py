@@ -19,7 +19,7 @@ if not (nome.replace(' ','').isalpha() and nome_meio.replace(' ','').isalpha()
         and sobrenome.replace(' ','').isalpha()):
     resposta = (f'Caracter inválido, digite somente letras!!!!')
 else:
-    resposta = (f'A junção das strings ficam: {juncao}')
+    resposta = (f'Nome Completo: {juncao}')
 
 print()
 print(resposta)
