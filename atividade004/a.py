@@ -11,14 +11,15 @@ nome_meio = input('Insira o nome do meio: ')
 sobrenome = input('Insira seu sobrenome: ')
 resposta = ''
 
-# Validação
-if (nome and nome_meio and sobrenome) == str:
-    lista = [nome, nome_meio, sobrenome]
-    juncao = ' '.join(lista)
-    resposta = (f'O seu nome completo é: {juncao}')
-else:
-    resposta = (f'Um dos valores inseridos é inválido, por favor insira apenas ' 
-          + f'valores do tipo texto.')
+lista = [nome, nome_meio, sobrenome]
+juncao = " ".join(lista)
     
+# Validação
+if not (nome.replace(' ','').isalpha() and nome_meio.replace(' ','').isalpha()
+        and sobrenome.replace(' ','').isalpha()):
+    resposta = (f'Caracter inválido, digite somente letras!!!!')
+else:
+    resposta = (f'A junção das strings ficam: {juncao}')
+
 print()
 print(resposta)
