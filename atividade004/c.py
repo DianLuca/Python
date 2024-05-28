@@ -13,6 +13,6 @@ if not (nome.replace(' ','').isalpha()):
     print('Um dos caracteres inserir é inválido.')
 else:
     if 'oliveira' in nome:
-        print(f'{bool(True)}. Foi encontrado {nome.title()} no nome.')
+        print(f'{bool(True)}. Foi encontrado {nome.title().strip()} no nome.')
     else:
         print(f'{bool(False)}. Não foi encontrado "Oliveira" no nome.')
