@@ -7,9 +7,12 @@ import os
 
 os.system('cls')
 
-nome = input('Insira um nome: ')
+nome = input('Insira um nome: ').lower()
 
-if 'Oliveira' in nome:
-    print(bool())
+if not (nome.replace(' ','').isalpha()):
+    print('Um dos caracteres inserir é inválido.')
 else:
-    print(bool())
+    if 'oliveira' in nome:
+        print(f'{bool(True)}. Foi encontrado {nome.title()} no nome.')
+    else:
+        print(f'{bool(False)}. Não foi encontrado "Oliveira" no nome.')
