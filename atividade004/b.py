@@ -17,7 +17,8 @@ if not (nome.replace(' ','').isalpha()):
     print('O item possui um caracter inválido!')
 elif 'silva' in nome:
     substituicao = nome.replace('silva', 'Oliveira')
-    print(f'O nome original é: {nome.title().strip()} e passará a ser: {substituicao.title().strip()}')
+    print(f'O nome original é: {nome.title().strip()} e passará a ser: '
+          + f'{substituicao.title().strip()}')
 else:
     print(f'Não foi encontrado o nome "Silva" para realizar a substituição.')
     
