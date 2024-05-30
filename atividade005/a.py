@@ -7,7 +7,7 @@ import os
 os.system('cls')
 
 
-contador = 0
+c = 0
 
 for c in range(1, 101):
     print(c, end = ' - ')
