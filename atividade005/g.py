@@ -1,2 +1,23 @@
-# Faça um programa que calcule os números primos em um intervalo 
+# Curso de Desenvolvimento de Sistemas
+# Turma 0152
+# Autor: Dian Luca Valente Nascimento
+# Data: 03/06/2024
+# Faça um programa que calcule os números primos em um intervalo
 # pré-determinado pelo usuário.
+import os
+
+
+os.system('cls')
+
+print('NÚMEROS PRIMOS')
+print()
+
+a = int(input('Insira um número para começar..: '))
+b = int(input('Insira um número para finalizar: '))
+
+for c in range(a, (b + 1)):
+    for i in range(a, c):
+        if c % i == 0:
+            break
+    else:
+        print(c)
