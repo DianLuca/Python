@@ -13,9 +13,9 @@ print()
 while init == 's':
     print('Programa iniciado com sucesso')
     while True:
-        a = int(input('Insira um número para iniciar o intervalo.: '))
-        b = int(input('Insira um número para encerrar o intervalo: '))
-        c = int(input('Insira os passos: '))
+        a = int(input('Insira um número para iniciar o intervalo.: ')) # Variável para iniciar
+        b = int(input('Insira um número para encerrar o intervalo: ')) # Variável para finalizar
+        c = int(input('Insira os passos: ')) # Passos a serem contados
         print()
 
         if (a < b) and (c > 0): # crescente
