@@ -29,7 +29,11 @@ while init == 's':
         print()
 
         # Validação dos valores inseridos
-        if not (a.isnumeric() and b.isnumeric() and c.isnumeric()):
+        if not ((a.lstrip('-').replace('.', '').isdigit()) and 
+                (b.lstrip('-').replace('.', '').isdigit()) and 
+                (c.lstrip('-').replace('.', '').isdigit())):
+                # lstrip está removendo o sinal(-) apenas para realizar a 
+                # verificação e replace remove o ponto(.) pelo mesmo motivo
             print('O item possui um caracter inválido! Insira apenas números.')
             print()
         else:
