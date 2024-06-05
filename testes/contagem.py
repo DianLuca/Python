@@ -1,8 +1,12 @@
+# SISTEMA PARA FINS DIDATICOS PODE POSSUIR ALGUNS ERROS. FORAM UTILIZADOS CONCEITOS 
+# APRENDIDOS ATÉ O MOMENTO, OUTROS CONCEITOS PODEM SER UTILIZADOS FUTURAMENTE. 
+# POSSÍVEIS ALTERAÇÕES PODEM SER INSERIDAS. DICAS SÃO BEM-VINDAS.
+# POR: Dian Luca Valente Nascimento - em 05/06/2024 (Última atualização).
+
 # Apenas um exercício próprio para fixação
 import os
 import time  # Para adicionar tempo para execução do programa
-# Para me permitir utilizar valores decimais para contagem dos intervalos
-import numpy as np
+import numpy as np # Para me permitir utilizar valores decimais para contagem dos intervalos
 
 
 os.system('cls')
@@ -27,6 +31,7 @@ while init == 's':
         # Validação dos valores inseridos
         if not (a.isnumeric() and b.isnumeric() and c.isnumeric()):
             print('O item possui um caracter inválido! Insira apenas números.')
+            print()
         else:
             a = float(a)
             b = float(b) # Casting para poder usar as variáveis de forma correta
@@ -51,8 +56,8 @@ while init == 's':
             else:
                 print(f'O intervalo possui passo igual a {c}, insira um passo'
                   + f'maior ou menor para executar a operação.')
-        print()
-        print('Fim do intervalo!')
+            print()
+            print('Fim do intervalo!')
 
         # Input para parada de contagem
         reset = input('Deseja contar novamente? [s - sim] ').lower()
@@ -73,9 +78,3 @@ else:
     print('Fim do programa!')
     time.sleep(3)
     os.system('cls')
-
-
-# Adicionar validação para o caso de C < 0 e dividir as condições e o mesmo
-# para caso o valor seja = 0 - REALIZADO
-# Validar as entradas de valor, para que todos sejam valores válidos para às entradas
-# Mais ????
