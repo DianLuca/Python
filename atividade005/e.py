@@ -12,12 +12,15 @@ a = int(input('Insira o menor número: '))
 b = int(input('Insira o maior número: '))
 print()
 
-c = 0
+c_par = 0
 soma = 0
 
-for c in range(a, (b + 1), 2):
-    numero = c
-    
-    soma += numero
-    
-    print(soma, end=' | ')
+for c in range(a, (b + 1)):
+    par = c % 2 == 0
+    if par == True:
+        print(c, end=' | ')
+        c_par += 1
+        soma += c
+print()
+print(c_par)
+print(soma)
