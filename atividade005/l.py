@@ -6,16 +6,13 @@ import os
 
 os.system('cls')
 
-usuario = input('Crie o seu nome de usuário: ')
-senha = input('Crie uma senha: ')
 
-banco = {'usuario': usuario, 'senha': senha}
-os.system('cls')
-
-usuario = input('Insira o seu nome de usuário: ')
-senha = input('Insira sua senha: ')
-
-if (banco['usuario'] == usuario and banco['senha'] == senha):
-    print('Acesso concedido!')
-else: 
-    print('Acesso negado!')
+while True:
+    usuario = input('Insira o seu nome de usuário: ')
+    senha = input('Insira sua senha: ')
+    
+    if (usuario == 'admin' and senha == 'admin'):
+        print('Acesso concedido!')
+        break
+    else: 
+        print('Acesso negado! Tente novamente')
