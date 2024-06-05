@@ -17,25 +17,25 @@ while init == 's':
     time.sleep(3)
     print('Programa iniciado com sucesso')
     while True:
-        a = int(input('Insira um número para iniciar o intervalo.: ')) # Variável para iniciar
-        b = int(input('Insira um número para encerrar o intervalo: ')) # Variável para finalizar
+        a = float(input('Insira um número para iniciar o intervalo.: ')) # Variável para iniciar
+        b = float(input('Insira um número para encerrar o intervalo: ')) # Variável para finalizar
         c = float(input('Insira os passos: ')) # Passos a serem contados
         print()
 
         if c > 0: # contagem crecente
             if (a < b):
-                for d in np.arange(a, (b + .1), c): # .1 inserido para evitar erros na contagem
-                    print(d, end=' ')
+                for d in np.arange(a, (b + .1), c): # .1 inserido para evitar erros na contagem, 
+                    print(round(d,4), end=' ')      # mas apresenta erro em contas decimais
             else: # Para caso seja inserido o valor para contagem crescente de forma inválida
                 for d in np.arange(b, (a + .1), c): 
-                    print(d, end=' ')
+                    print(round(d,4), end=' ')
         elif c < 0: # contagem decrescente
-            if (a > b): # Para caso seja inserido o valor para contagem decrescente de forma inválida
+            if (a > b): 
                 for d in np.arange(a, (b - .1), c):
-                    print(d, end=' ')
-            else: 
+                    print(round(d,4), end=' ')
+            else: # Para caso seja inserido o valor para contagem decrescente de forma inválida
                 for d in np.arange(b, (a - .1), c):
-                    print(d, end=' ')
+                    print(round(d,4), end=' ')
         else:
             print(f'O intervalo possui passo igual a {c}, insira um passo' 
                   + f'maior ou menor para executar a operação.')
