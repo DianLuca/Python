@@ -1,6 +1,7 @@
 # Apenas um exercício próprio para fixação
 import os
-import time
+import time # Para adicionar tempo para execução do programa
+import numpy as np # Para me permitir utilizar valores decimais para contagem dos intervalos
 
 
 os.system('cls')
@@ -18,22 +19,22 @@ while init == 's':
     while True:
         a = int(input('Insira um número para iniciar o intervalo.: ')) # Variável para iniciar
         b = int(input('Insira um número para encerrar o intervalo: ')) # Variável para finalizar
-        c = int(input('Insira os passos: ')) # Passos a serem contados
+        c = float(input('Insira os passos: ')) # Passos a serem contados
         print()
 
         if c > 0: # contagem crecente
             if (a < b):
-                for d in range(a, (b + 1), c):
+                for d in np.arange(a, (b + .1), c): # .1 inserido para evitar erros na contagem
                     print(d, end=' ')
             else: # Para caso seja inserido o valor para contagem crescente de forma inválida
-                for d in range(b, (a + 1), c):
+                for d in np.arange(b, (a + .1), c): 
                     print(d, end=' ')
         elif c < 0: # contagem decrescente
             if (a > b): # Para caso seja inserido o valor para contagem decrescente de forma inválida
-                for d in range(a, (b - 1), c):
+                for d in np.arange(a, (b - .1), c):
                     print(d, end=' ')
             else: 
-                for d in range(b, (a - 1), c):
+                for d in np.arange(b, (a - .1), c):
                     print(d, end=' ')
         else:
             print(f'O intervalo possui passo igual a {c}, insira um passo' 
