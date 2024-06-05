@@ -12,8 +12,13 @@ b = int(input('Insira o maior número: '))
 print()
 
 c = 0
+c_par = 0
 
 print(f'Os números pares no intervalo entre {a} e {b}, serão: ')
 
-for c in range(a, b + 1, 2):
-    print(c, end=' | ')
+for c in range(a, b + 1):
+    if (c % 2 == 0) == True:
+        c_par += 1
+        print(c, end=' | ')
+print()
+print(f'\nOs existe {c_par} número(s) par(es) nesse intervalo.')
