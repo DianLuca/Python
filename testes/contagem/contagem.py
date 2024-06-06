@@ -12,10 +12,10 @@ import numpy as np # Para me permitir utilizar valores decimais para contagem do
 os.system('cls')
 
 print('Exercício de contagem em um intervalo')
-print()
+print() 
 print('-- SEJA BEM-VINDO --')
 # Input para iniciar o programa
-init = input('Deseja iniciar o programa?[s - sim] ').lower()
+init = input('Deseja iniciar o programa?[s - sim] ').lower().strip()
 print()
 
 while init == 's':
@@ -23,9 +23,9 @@ while init == 's':
     time.sleep(3)
     print('Programa iniciado com sucesso')
     while True:
-        a = input('Insira um número para iniciar o intervalo.: ') # Variável para iniciar
-        b = input('Insira um número para encerrar o intervalo: ') # Variável para finalizar
-        c = input('Insira os passos: ')  # Passos a serem contados
+        a = input('Insira um número para iniciar o intervalo.: ').strip() # Variável para iniciar e strip() para excluir possíveis espaços inseridos
+        b = input('Insira um número para encerrar o intervalo: ').strip() # Variável para finalizar
+        c = input('Insira os passos: ').strip()  # Passos a serem contados
         print()
 
         # Validação dos valores inseridos
@@ -64,10 +64,10 @@ while init == 's':
             print('Fim do intervalo!')
 
         # Input para parada de contagem
-        reset = input('Deseja contar novamente? [s - sim] ').lower()
+        reset = input('Deseja contar novamente? [s - sim] ').lower().strip()
         if reset != 's':
             # Input para encerrar o sistema
-            fechar = input('Deseja finalizar o programa? [s - sim] ').lower()
+            fechar = input('Deseja finalizar o programa? [s - sim] ').lower().strip()
             os.system('cls')
             if fechar == 's':
                 os.system('cls')
