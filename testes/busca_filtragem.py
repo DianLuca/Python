@@ -11,6 +11,7 @@ estoque = [
     {"produto": "Alça Jeans", "quantidade": 30, "preco_unitario": 39.99}
 ]
 
+lista_crescente = sorted(estoque, key=lambda x: x['produto'])
 # Ordenando - Criar após uma forma de escolher como será filtrado - produto, quantidade e preço
 # os.system('cls')
 filtro = input('Filtrar por: 1 - Produto | 2 - Quantidade | 3 - Preço | ').lower().strip()
@@ -44,7 +45,7 @@ for item in estoque:
               f'Quantidade: {item["quantidade"]} | '
               f'Valor: {item["preco_unitario"]}')
         encontrado = True
-if not encontrado:
+if not encontrado or busca == '':
     print('Nenhum item encontrado com essa palavra nos nomes dos produtos.')
 
 # Para o caso de muitos itens devo procurar outras formas, essa busca é limitada
