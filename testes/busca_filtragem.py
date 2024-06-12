@@ -37,7 +37,7 @@ while True: # Escolha de Ação
                     f'Valor: {item["preco_unitario"]}')
         
             print()    
-            novo_filtro = input('Deseja fazer uma nova filtragem? ').lower().strip()
+            novo_filtro = input('Deseja fazer uma nova filtragem? [S - Sim || N - Não] ').lower().strip()
             os.system('cls')
             if novo_filtro != 's':
                 os.system('cls')
