@@ -11,33 +11,40 @@ estoque = [
     {"produto": "Alça Jeans", "quantidade": 30, "preco_unitario": 39.99}
 ]
 
-# sorted pega a lista e retorna ordenada de acordo com o que foi solicitado
-estoque = sorted(estoque, key=lambda x: x['produto'])
 # Ordenando - Criar após uma forma de escolher como será filtrado - produto, quantidade e preço
 while True: # Escolha de Ação
-    filtro_busca = input('O que deseja realizar: FILTRO || BUSCA ').lower().strip()
+    filtro_busca = input('O que deseja realizar [F - FILTRAR]  || [B - BUSCAR]: ').lower().strip()
+    os.system('cls')
     if filtro_busca == 'f':
-        
-        filtro = input(
-        'Filtrar por: 1 - Produto | 2 - Quantidade | 3 - Preço | ').lower().strip()
-        if filtro == '1' or filtro == 'produto':
-            filtro = 'produto'
-        elif filtro == '2' or filtro == 'quantidade':
-            filtro = 'quantidade'
-        elif filtro == '3' or filtro == 'preço':
-            filtro = 'preco_unitario'
-        else:  # Caso não seja definido nenhum ou algo diferente este será o padrão do sistema
-            filtro = 'produto'
+        while True:
+            filtro = input('Filtrar por: 1 - Produto | 2 - Quantidade | 3 - Preço | ').lower().strip()
+            print()
+            if filtro == '1' or filtro == 'produto':
+                filtro = 'produto'
+            elif filtro == '2' or filtro == 'quantidade':
+                filtro = 'quantidade'
+            elif filtro == '3' or filtro == 'preço':
+                filtro = 'preco_unitario'
+            else:  # Caso não seja definido nenhum ou algo diferente este será o padrão do sistema
+                filtro = 'produto'
 
+        # sorted pega a lista e retorna ordenada de acordo com o que foi solicitado
+            estoque = sorted(estoque, key=lambda x: x[filtro])
         # lambda pega a lista completa e difine X para usar como argumento, permitindo filtrar pelo que foi solicitado
-        for item in estoque:
-            print(f'Nome do produto: {item["produto"]} | '
-                f'Quantidade: {item["quantidade"]} | '
-                f'Valor: {item["preco_unitario"]}')
-            
+            for item in estoque:
+                print(f'Nome do produto: {item["produto"]} | '
+                    f'Quantidade: {item["quantidade"]} | '
+                    f'Valor: {item["preco_unitario"]}')
+        
+            print()    
+            novo_filtro = input('Deseja fazer uma nova filtragem? ').lower().strip()
+            os.system('cls')
+            if novo_filtro != 's':
+                os.system('cls')
+                break
     else:
         while True:
-            busca = input('Busca: ').strip()
+            busca = input('Busca: ').lower().strip()
             itens = 0
 
             encontrado = False  # Variável para controlar se o item foi encontrado
@@ -50,10 +57,19 @@ while True: # Escolha de Ação
                     f'Quantidade: {item["quantidade"]} | '
                     f'Valor: {item["preco_unitario"]}')
                     encontrado = True
+            
+            print()
+            nova_busca = input('Deseja fazer uma nova busca? [S - Sim || N - Não] ').lower().strip()
+            os.system('cls')
+            if nova_busca != 's':
+                os.system('cls')
+                
             if not encontrado or busca == '':
+                print()
                 resposta_erro = f'Nenhum item "{busca}" encontrado com essa palavra nos nomes dos produtos.'
                 print(resposta_erro.upper())    
-                nova_busca = input('Deseja fazer uma nova busca? ')
+                print()
+                nova_busca = input('Deseja fazer uma nova busca? [S - Sim || N - Não] ').lower().strip()
                 if nova_busca != 's':
                     os.system('cls')
                     break
