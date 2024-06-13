@@ -15,7 +15,7 @@ entrada = input('Insira 10 valores separados por vírgula: ').replace(' ','')
 numeros = entrada.split(',')
 
 lista_numeros.extend([int(numero) for numero in numeros])
-# Converte o número para inteiro e fazer a ordenação de forma correta
+# Converte o número para inteiro, para fazer a ordenação de forma correta
 
 lista_numeros.sort()
 
