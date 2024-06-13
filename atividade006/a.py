@@ -9,13 +9,15 @@ import os
 
 os.system('cls')
 
-lista = [1, 2, 3, 5, 6]
-print(f'Lista Original:{lista}')
+lista = [1, 2, 3, 5, 6] 
+print(f'Lista Original:{lista}') # A lista original não possui o número '4'
 
-inserir_lista = input(f'Qual valor devo inserir para completar a lista {lista}? ')
+inserir_lista = input(f'Qual valor devo inserir para completar a lista {lista}? ') # Entrada do usuário
 
-inserir_lista_completa = lista.insert(inserir_lista) # Retorna erro
+inserir_lista_completa = lista.append(int(inserir_lista)) # Inserindo valor na lista
+lista.sort() # Colocando o valor na ordem correta
 
+print()
 print(f'Lista Ateradada: {lista}')
 
 # Depois aplicar um input e utilizar sort()
