@@ -12,7 +12,9 @@ os.system('cls')
 inicio = int(input('Insira um valor inteiro para sortear: '))
 final = int(input('Insira outro valor inteiro para sortear: '))
 
-lista_numeros = [random.randint(inicio,final) for _ in range(50)] # Gera 50 números aleatórios na lista
+# Gera 50 números aleatórios na lista. "_" (Valor vazio) é utilizado, pois não importa os valores 
+# gerados no intervalo, só é necessários que eles sejam inseridos.
+lista_numeros = [random.randint(inicio,final) for _ in range(50)] 
 
 
 lista_fatiada = []
