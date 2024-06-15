@@ -28,23 +28,21 @@ while inicio == 's':
     # OPÇÃO PARA ENTRAR NA CRUD
     print('-' * 35 + '| MENU DE OPÇÕES |' + '-' * 35)
     print('SELECIONE UMA DAS OPÇÕES:')
-    opcoes = input('1 - CRIAR NOVO ITEM | 2 - ALTERAR ITEM (Em desenvolvimento) | 3 - EXCLUIR ITEM |')
-######################     CREATE     ########################
+    opcoes = input('1 - CRIAR NOVO ITEM | 2 - ALTERAR ITEM (Em desenvolvimento) | 3 - EXCLUIR ITEM | : ')
+    
+    ######################     CREATE     ########################
     if opcoes == '1':
-        # PARA INSERIR: UTILIZAR APPEND() OU EXTEND()
-        # Inicializa uma lista vazia para armazenar os vinhos
-
         # Solicita ao usuário quantos vinhos deseja inserir
         print()
-        num_vinhos = int(input("Quantos vinhos deseja inserir? "))
-
+        num_vinhos = int(input('Quantos vinhos deseja inserir? '))
+        os.system('cls')
         # Loop para solicitar os dados de cada vinho e adicioná-los à lista
         for i in range(1, num_vinhos + 1):  # Adiciona item a item na lista abaixo
-            print(f"Inserindo dados do vinho {i}:")
-            categoria = input("Categoria: ")
-            pais = input("País: ")
-            preco = float(input("Preço: ").replace(',', '.'))
-            descricao = input("Descrição: ")
+            print(f'Inserindo dados do vinho {i}:')
+            categoria = input('Categoria: ')
+            pais = input('País: ')
+            preco = float(input('Preço: ').replace(',', '.'))
+            descricao = input('Descrição: ')
             os.system('cls')
 
             novo_item = []
@@ -56,11 +54,39 @@ while inicio == 's':
             # Envia os itens para a lista carta_vinho
             carta_vinho.extend(novo_item)
 
-        # PARA ATUALIZAR: UTILIZAR INDEX() E SELECIONAR O ITEM
+    ######################     UPDATE     ########################
     elif opcoes == '2':
-        print('EM DESENVOLVIMENTO')
-        ############### DELETE ##############
+        print()
+        os.system('cls')
+        while True:
+            for item in carta_vinho:
+                indice = carta_vinho.index(item) + 1
+                #EXIBINDO A LISTA DE ITENS
+                print(f'{indice}| Categoria: {item["categoria"]} | País: {item["pais"]} | Preço: '
+                    + f'{item["preco"]} | Descrição: {item["descricao"]}') 
+            
+            item_index = int(input('Qual deseja alterar? '))
+            item_index = item_index - 1
+            # ALTERANDO OS ITENS DE ACORDO COM A LISTA
+            print('Faça as alterações') 
+            categoria = input('Categoria: ')
+            pais = input('País: ')
+            preco = float(input('Preço: ').replace(',', '.'))
+            descricao = input('Descrição: ')
+            os.system('cls')
+            # RETORNANDO A ALTERAÇÃO PARA LISTA
+            carta_vinho[item_index] = vinho = {'categoria': categoria, 'pais': pais,
+                    'preco': preco, 'descricao': descricao}
+        
+            para_alteracao = input('Deseja alterar mais algum item?[S - Sim] ').strip().lower()
+            if para_alteracao != 's':
+                os.system('cls')
+                break
+            
+            
+    ######################     DELETE     ########################
     elif opcoes == '3':
+        print()
         busca_apagar = input('Qual item deseja remover: ')
         os.system('cls')
         while True:
@@ -77,8 +103,9 @@ while inicio == 's':
             removido = carta_vinho.pop(apagar)
             para_apagar = input('Deseja excluir mais algum item?[S - Sim]').strip().lower()
             if para_apagar != 's':
+                os.system('cls')
                 break
-#########################################
+    #########################################
     else:
         saida = input('Deseja encerrar o programa?[S - Sim] ').strip().lower()
         if saida == 's':
