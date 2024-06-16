@@ -36,11 +36,11 @@ while inicio == 's':
 
     ######################     CREATE     ########################
     if opcoes == '1':
-        # Solicita ao usuário quantos vinhos deseja inserir
+        # SOLICITA AO USUÁRIO QUANTOS VINHOS DESEJA INSERIR
         print()
         num_vinhos = int(input('Quantos vinhos deseja inserir? '))
         os.system('cls')
-        # Loop para inserir os dados de cada vinho e adicioná-los à lista
+        # LOOP PARA INSERIR OS DADOS DE CADA VINHO E ADICIONÁ-LOS À LISTA
         for i in range(1, num_vinhos + 1):
             print(f'Inserindo dados do vinho {i}:')
             categoria = input('Categoria (Ex.:Rosê, Tinto): ').capitalize()
@@ -55,12 +55,12 @@ while inicio == 's':
             os.system('cls')
 
             novo_item = []
-            # Cria um dicionário com os dados inseridos e adiciona à lista_de_vinhos
+            # CRIA UMA VARIÁVEL PARA RECEBER TODOS OS DADOS
             vinho = {'categoria': categoria, 'pais': pais,
                      'preco': preco, 'descricao': descricao}
-            novo_item.append(vinho)  # Salva o item na lista novo_item
+            novo_item.append(vinho)  # SALVA O ITEM NA LISTA novo_item
 
-            # Envia os itens para a lista carta_vinho
+            # ENVIA OS ITENS PARA carta_vinho 
             carta_vinho.extend(novo_item)
 
     ######################     UPDATE     ########################
@@ -91,14 +91,13 @@ while inicio == 's':
 
             item_index = int(item_index) - 1
 
-            # item_index = int(item_index) - 1
             # ALTERANDO OS ITENS DE ACORDO COM A LISTA
-            # O não preenchimento torna o campo vazio
+            # O NÃO PREENCHER TORNA O CAMPO VAZIO
             print('Faça as alterações - FAVOR PREENCHER TODOS OS CAMPOS')
             categoria = input('Categoria (Ex.:Rosê, Tinto): ').capitalize()
             pais = input('País (Ex.: Brasil): ').capitalize()
             preco = input('Preço(R$): ').replace(',', '.')
-            if preco == '' or not preco.isdigit():  # Validando a entrada e convertendo para float
+            if preco == '' or not preco.isdigit():  # VALIDANDO A ENTRADA E REALIZANDO UM CASTING PARA FLOAT
                 preco = 0.0
             else:
                 preco = float(preco)
@@ -128,9 +127,9 @@ while inicio == 's':
                       + f'{item["descricao"]}')
 
             print()
-            # Selecionando item pelo índice
+            # SELECIONANDO ITEM PELO INDÍCE
             apagar = input('Número do item que deseja excluir? ')
-            if apagar == '' or not apagar.isdigit():  # Validando a entrada
+            if apagar == '' or not apagar.isdigit():  # VALIDANDO A ENTRADA
                 print('Valor inválido! Tente Novamente')
                 apagar = input('Número do item que deseja excluir? ')
                 if apagar == '' or not apagar.isdigit():
