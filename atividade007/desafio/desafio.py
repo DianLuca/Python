@@ -18,14 +18,14 @@ carta_vinho = [{'categoria': 'Tinto', 'pais': 'Brasil', 'preco': 25.99,
                ]
 
 while inicio == 's':
-    print('-' * 35 + '| ADEGA |' + '-' * 35)
+    print('-' * 40 + '| ADEGA |' + '-' * 40)
     if len(carta_vinho) <= 0:
             print('FAVOR ADICIONAR ITEM(NS) À LISTA')
     # PARA LER: UTILIZAR FOR E PRINT(f'') - SAÍDA FORMATADA
     # APRESENTANDO TODOS OS ITENS NA TELA
     for i, item in enumerate(carta_vinho, start=1):
             print(f'{i}| Categoria: {item["categoria"]} | País: {item["pais"]} | Preço:R$ '
-              + f'{item["preco"]} | Descrição: {item["descricao"]}')
+              + f'{item["preco"]:.2f} | Descrição: {item["descricao"]}')
 
     # OPÇÃO PARA ENTRAR NA CRUD
     print('-' * 35 + '| MENU DE OPÇÕES |' + '-' * 35)
@@ -38,8 +38,8 @@ while inicio == 's':
         print()
         num_vinhos = int(input('Quantos vinhos deseja inserir? '))
         os.system('cls')
-        # Loop para solicitar os dados de cada vinho e adicioná-los à lista
-        for i in range(1, num_vinhos + 1):  # Adiciona item a item na lista abaixo
+        # Loop para inserir os dados de cada vinho e adicioná-los à lista
+        for i in range(1, num_vinhos + 1):  
             print(f'Inserindo dados do vinho {i}:')
             categoria = input('Categoria: ').capitalize()
             pais = input('País: ').capitalize()
@@ -51,7 +51,7 @@ while inicio == 's':
             descricao = input('Descrição (Marca, Teor Alcoólico e outros): ').capitalize()
             os.system('cls')
 
-            novo_item = []
+            novo_item = [] 
             # Cria um dicionário com os dados inseridos e adiciona à lista_de_vinhos
             vinho = {'categoria': categoria, 'pais': pais,
                     'preco': preco, 'descricao': descricao}
@@ -86,11 +86,11 @@ while inicio == 's':
             
             # item_index = int(item_index) - 1
             # ALTERANDO OS ITENS DE ACORDO COM A LISTA
-            print('Faça as alterações') 
+            print('Faça as alterações - FAVOR PREENCHER TODOS OS CAMPOS') # O não preenchimento torna o campo vazio
             categoria = input('Categoria: ').capitalize()
             pais = input('País: ').capitalize()
             preco = input('Preço(R$): ').replace(',', '.')
-            if preco == '' or not preco.isdigit():
+            if preco == '' or not preco.isdigit(): # Validando a entrada e convertendo para float
                 preco = 0.0
             else:
                 preco = float(preco)
@@ -109,21 +109,16 @@ while inicio == 's':
     ######################     DELETE     ########################
     elif opcoes == '3':
         print()
-        busca_apagar = input('Qual item deseja remover(Por Categoria ou País): ')
         os.system('cls')
         while True:
             for item in carta_vinho:
-                if (busca_apagar not in item["categoria"]) and (busca_apagar not in item["pais"]):
-                    print('Não existe nenhum item com essas caracteristicas na Carta de Vinhos')
-                    break
-                else:
-                    indice = carta_vinho.index(item)
-                    print(f'{indice + 1}| Categoria: {item["categoria"]} | País: {item["pais"]} | Preço:R$ '
+                indice = carta_vinho.index(item)
+                print(f'{indice + 1}| Categoria: {item["categoria"]} | País: {item["pais"]} | Preço:R$ '
                         + f'{item["preco"]:.2f} | Descrição: {item["descricao"]}')
             
             print()
-            apagar = input('Número do item que deseja excluir? ')
-            if apagar == '' or not apagar.isdigit():
+            apagar = input('Número do item que deseja excluir? ') # Selecionando item pelo índice
+            if apagar == '' or not apagar.isdigit(): # Validando a entrada
                 print('Valor inválido! Tente Novamente')
                 apagar = input('Número do item que deseja excluir? ')
                 if apagar == '' or not apagar.isdigit():
@@ -135,6 +130,8 @@ while inicio == 's':
             if para_apagar != 's':
                 os.system('cls')
                 break
+            else:
+                os.system('cls')
     #########################################
     else:
         os.system('cls')
