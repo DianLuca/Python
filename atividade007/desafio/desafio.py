@@ -11,6 +11,8 @@ os.system('cls')
 inicio = input('Deseja iniciar o sistema?[S - Sim] ').strip().lower()
 os.system('cls')
 # LISTA COM A CARTA DE VINHOS: TIPO DO VINHO, PAÍS, DESCRIÇÃO E PREÇO
+# CÓDIGO PARA COMPILAR python -m py_compile desafio.py
+
 carta_vinho = [# EXEMPLO DE COMO DEVE SER:
     #{'categoria': 'Tinto', 'pais': 'Brasil', 'preco': 25.99,'descricao': 'Marca: Miolo Wine Group, 
     # Este vinho apresenta-se equilibrado, redondo com final de boca agradável.'},
