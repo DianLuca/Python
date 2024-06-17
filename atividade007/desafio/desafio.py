@@ -11,14 +11,14 @@ os.system('cls')
 inicio = input('Deseja iniciar o sistema?[S - Sim] ').strip().lower()
 os.system('cls')
 # LISTA COM A CARTA DE VINHOS: TIPO DO VINHO, PAÍS, DESCRIÇÃO E PREÇO
-carta_vinho = [{'categoria': 'Tinto', 'pais': 'Brasil', 'preco': 25.99,
-                'descricao': 'Vinho com baixo teor alcoólico'},
-               {'categoria': 'Tinto', 'pais': 'Nova Zelândia', 'preco': 25.99,
-                'descricao': 'Vinho com baixo teor alcoólico'}
+carta_vinho = [# EXEMPLO DE COMO DEVE SER:
+    #{'categoria': 'Tinto', 'pais': 'Brasil', 'preco': 25.99,'descricao': 'Marca: Miolo Wine Group, 
+    # Este vinho apresenta-se equilibrado, redondo com final de boca agradável.'},
                ]
 
 while inicio == 's':
     print('-' * 40 + '| ADEGA |' + '-' * 40)
+    print()
     if len(carta_vinho) <= 0:
         print('FAVOR ADICIONAR ITEM(NS) À LISTA')
     # PARA LER: UTILIZAR FOR E PRINT(f'') - SAÍDA FORMATADA
@@ -29,6 +29,7 @@ while inicio == 's':
               + f'Descrição: {item["descricao"]}')
 
     # OPÇÃO PARA ENTRAR NA CRUD
+    print()
     print('-' * 35 + '| MENU DE OPÇÕES |' + '-' * 35)
     print('SELECIONE UMA DAS OPÇÕES:')
     opcoes = input(
