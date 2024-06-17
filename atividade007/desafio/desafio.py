@@ -33,7 +33,7 @@ while inicio == 's':
     print('-' * 35 + '| MENU DE OPÇÕES |' + '-' * 35)
     print('SELECIONE UMA DAS OPÇÕES:')
     opcoes = input(
-        '1 - ADICIONAR ITEM | 2 - ALTERAR ITEM | 3 - EXCLUIR ITEM | : ')
+        '1 - ADICIONAR ITEM | 2 - ALTERAR ITEM | 3 - EXCLUIR ITEM | : ').strip()
 
     ######################     CREATE     ########################
     if opcoes == '1':
@@ -44,15 +44,15 @@ while inicio == 's':
         # LOOP PARA INSERIR OS DADOS DE CADA VINHO E ADICIONÁ-LOS À LISTA
         for i in range(1, num_vinhos + 1):
             print(f'Inserindo dados do vinho {i}:')
-            categoria = input('Categoria (Ex.:Rosê, Tinto): ').capitalize()
-            pais = input('País (Ex.: Brasil): ').capitalize()
-            preco = input('Preço(R$): ').replace(',', '.')
+            categoria = input('Categoria (Ex.:Rosê, Tinto): ').capitalize().strip()
+            pais = input('País (Ex.: Brasil): ').capitalize().strip()
+            preco = input('Preço(R$): ').replace(',', '.').strip()
             if preco == '' or not preco.isdigit():
                 preco = 0.0
             else:
                 preco = float(preco)
             descricao = input(
-                'Descrição (Marca, Teor Alcoólico e outros): ').capitalize()
+                'Descrição (Marca, Teor Alcoólico e outros): ').capitalize().strip()
             os.system('cls')
 
             novo_item = []
@@ -79,11 +79,11 @@ while inicio == 's':
 
             print()
             item_index = input(
-                'Qual deseja alterar (Selecione pelo número na tabela)? ')
+                'Qual deseja alterar (Selecione pelo número na tabela)? ').strip()
             if item_index == '':
                 print('Selecione novamente')
                 item_index = input(
-                    'Qual deseja alterar (Vazio retorna ao menu)? ')
+                    'Qual deseja alterar (Vazio retorna ao menu)? ').strip()
                 if item_index == '':
                     os.system('cls')
                     break
@@ -95,15 +95,15 @@ while inicio == 's':
             # ALTERANDO OS ITENS DE ACORDO COM A LISTA
             # O NÃO PREENCHER TORNA O CAMPO VAZIO
             print('Faça as alterações - FAVOR PREENCHER TODOS OS CAMPOS')
-            categoria = input('Categoria (Ex.:Rosê, Tinto): ').capitalize()
-            pais = input('País (Ex.: Brasil): ').capitalize()
-            preco = input('Preço(R$): ').replace(',', '.')
+            categoria = input('Categoria (Ex.:Rosê, Tinto): ').capitalize().strip()
+            pais = input('País (Ex.: Brasil): ').capitalize().strip()
+            preco = input('Preço(R$): ').replace(',', '.').strip()
             if preco == '' or not preco.isdigit():  # VALIDANDO A ENTRADA E REALIZANDO UM CASTING PARA FLOAT
                 preco = 0.0
             else:
                 preco = float(preco)
             descricao = input(
-                'Descrição (Marca, Teor Alcoólico e outros): ').capitalize()
+                'Descrição (Marca, Teor Alcoólico e outros): ').capitalize().strip()
             os.system('cls')
             # RETORNANDO A ALTERAÇÃO PARA LISTA
             carta_vinho[item_index] = vinho = {'categoria': categoria, 
@@ -129,10 +129,10 @@ while inicio == 's':
 
             print()
             # SELECIONANDO ITEM PELO INDÍCE
-            apagar = input('Número do item que deseja excluir? ')
+            apagar = input('Número do item que deseja excluir? ').strip()
             if apagar == '' or not apagar.isdigit():  # VALIDANDO A ENTRADA
                 print('Valor inválido! Tente Novamente')
-                apagar = input('Número do item que deseja excluir? ')
+                apagar = input('Número do item que deseja excluir? ').strip()
                 if apagar == '' or not apagar.isdigit():
                     os.system('cls')
                     break
@@ -148,6 +148,7 @@ while inicio == 's':
     #########################################
     else:
         os.system('cls')
+        print('Nenhum dos valores foi selecionado!')
         parada = input('Deseja encerrar o programa?'
                        + f'[S - Sim] ').strip().lower()
         os.system('cls')
