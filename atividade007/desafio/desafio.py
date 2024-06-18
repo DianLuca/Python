@@ -49,10 +49,12 @@ while inicio == 's':
             categoria = input('Categoria (Ex.:Rosê, Tinto): ').capitalize().strip()
             pais = input('País (Ex.: Brasil): ').capitalize().strip()
             preco = input('Preço(R$): ').replace(',', '.').strip()
-            if preco == '' or not preco.isdigit():
+            if preco == '': # CONVERTENDO E VALIDANDO A ENTRADA
                 preco = 0.0
-            else:
+            elif preco.replace('.', '', 1).isdigit():
                 preco = float(preco)
+            else:
+                preco = 0.0
             descricao = input(
                 'Descrição (Marca, Teor Alcoólico e outros): ').capitalize().strip()
             os.system('cls')
@@ -100,10 +102,12 @@ while inicio == 's':
             categoria = input('Categoria (Ex.:Rosê, Tinto): ').capitalize().strip()
             pais = input('País (Ex.: Brasil): ').capitalize().strip()
             preco = input('Preço(R$): ').replace(',', '.').strip()
-            if preco == '' or not preco.isdigit():  # VALIDANDO A ENTRADA E REALIZANDO UM CASTING PARA FLOAT
+            if preco == '':
                 preco = 0.0
-            else:
+            elif preco.replace('.', '', 1).isdigit():
                 preco = float(preco)
+            else:
+                preco = 0.0
             descricao = input(
                 'Descrição (Marca, Teor Alcoólico e outros): ').capitalize().strip()
             os.system('cls')
