@@ -53,6 +53,7 @@ while inicio == 's':
     ######################     CREATE     ########################
     elif opcoes == '2':
         while True:  # SOLICITA AO USUÁRIO QUANTOS VINHOS DESEJA INSERIR
+            print()
             num_vinhos = input('Quantos vinhos deseja inserir (Campo vazio '
                                + 'ou letras não são aceitos)? ')
             if (num_vinhos == '' or not num_vinhos.isnumeric()):
@@ -166,13 +167,19 @@ while inicio == 's':
             print()
             # SELECIONANDO ITEM PELO INDÍCE
             apagar = input('Número do item que deseja excluir? ').strip()
-            if apagar == '' or not apagar.isdigit():  # VALIDANDO A ENTRADA
+            if apagar == '' or not apagar.isnumeric():  # VALIDANDO A ENTRADA
                 print('Valor inválido! Tente Novamente')
                 apagar = input('Número do item que deseja excluir? ').strip()
-                if apagar == '' or not apagar.isdigit():
+                if apagar == '' or not apagar.isnumeric():
                     os.system('cls')
                     break
+                
             apagar = int(apagar) - 1
+            if ((0 <= int(apagar) > len(carta_vinho)) or (len(carta_vinho) <= 0)):
+                erro_excluir = input('O valor inserido não está na lista. Precione enter para continuar. ')
+                if erro_excluir == '':
+                    os.system('cls')
+                    break
             removido = carta_vinho.pop(apagar)
             para_apagar = input(
                 'Deseja excluir mais algum item?[S - Sim] ').strip().lower()
