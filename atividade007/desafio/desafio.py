@@ -176,6 +176,7 @@ while inicio == 's':
                 
             apagar = int(apagar) - 1
             if ((0 <= int(apagar) > len(carta_vinho)) or (len(carta_vinho) <= 0)):
+                print()
                 erro_excluir = input('O valor inserido não está na lista. Precione enter para continuar. ')
                 if erro_excluir == '':
                     os.system('cls')
