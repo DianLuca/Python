@@ -35,14 +35,14 @@ while inicio == 's':
                 print()
                 print('FAVOR ADICIONAR ITEM(NS) À LISTA')
                 print()
-            # for i, item in enumerate(carta_vinho, start=1):
-            #     print(f'{i}| Categoria: {item["categoria"]} | '
-            #           + f'País: {item["pais"]} | '
-            #           + f'Preço:R$ {item["preco"]:.2f} | '
-            #           + f'Descrição: {item["descricao"]}')
-            carta_vinho = [{**{'':i + 1}, **row} for i, row in enumerate(carta_vinho)]
-            print(tabulate.tabulate(carta_vinho, headers= 'keys', tablefmt= 
-                        'rounded_grid', showindex= 'num', stralign='center'))
+            for i, item in enumerate(carta_vinho, start=1):
+                print(f'{i}| Categoria: {item["categoria"]} | '
+                      + f'País: {item["pais"]} | '
+                      + f'Preço:R$ {item["preco"]:.2f} | '
+                      + f'Descrição: {item["descricao"]}')
+            # carta_vinho = [{**{'':i + 1}, **row} for i, row in enumerate(carta_vinho)]
+            # print(tabulate.tabulate(carta_vinho, headers= 'keys', tablefmt= 
+            #             'rounded_grid', showindex= 'num', stralign='center'))
             print('=' * 70)
             volta_menu = input('Deseja voltar ao menu?[S - Sim] ')
             os.system('cls')
