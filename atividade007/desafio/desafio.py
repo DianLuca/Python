@@ -4,6 +4,7 @@
 # Data: 17/06/2024
 # DESAFIO: Construa um código para exemplificar um CRUD. Não é permitido funções ou validações try exception.
 import os
+import tabulate
 
 
 os.system('cls')
@@ -29,16 +30,19 @@ while inicio == 's':
     if opcoes == '1':
         os.system('cls')
         while True:
-            print('-' * 40 + '| ADEGA |' + '-' * 40)
+            print('-' * 65 + '| ADEGA |' + '-' * 65)
             if len(carta_vinho) <= 0:
                 print()
                 print('FAVOR ADICIONAR ITEM(NS) À LISTA')
                 print()
-            for i, item in enumerate(carta_vinho, start=1):
-                print(f'{i}| Categoria: {item["categoria"]} | '
-                      + f'País: {item["pais"]} | '
-                      + f'Preço:R$ {item["preco"]:.2f} | '
-                      + f'Descrição: {item["descricao"]}')
+            # for i, item in enumerate(carta_vinho, start=1):
+            #     print(f'{i}| Categoria: {item["categoria"]} | '
+            #           + f'País: {item["pais"]} | '
+            #           + f'Preço:R$ {item["preco"]:.2f} | '
+            #           + f'Descrição: {item["descricao"]}')
+            carta_vinho = [{**{'':i + 1}, **row} for i, row in enumerate(carta_vinho)]
+            print(tabulate.tabulate(carta_vinho, headers= 'keys', tablefmt= 
+                        'rounded_grid', showindex= 'num', stralign='center'))
             print('=' * 70)
             volta_menu = input('Deseja voltar ao menu?[S - Sim] ')
             os.system('cls')
