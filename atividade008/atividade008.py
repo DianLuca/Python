@@ -13,7 +13,8 @@ os.system('cls')
 frutas_set = set()
 
 while True:
-    print('Utilizando o método REMOVE()')
+    print('UTILIZANDO O MÉTODO REMOVE()')
+    print('-' * 70)
     # Adicionando valores a lista
     num_item = input('Quantos itens deseja inserir? ').strip()
     if num_item == '' or not num_item.isnumeric():
@@ -23,21 +24,40 @@ while True:
     
     for item in range(num_item):
         item = input(f'Insira a fruta {item + 1}: ').capitalize()
-        frutas_set.add(item)
-        
+        if item == '' or not item.isalpha():
+            print('Valor Inválido')
+        else:
+            frutas_set.add(item)
+    
     os.system('cls')
-    print(frutas_set)
+    print('Item(ns) presentes no conjunto')
+    print('-' * 70)
+    if len(frutas_set) <= 0:
+        print('Insira itens a lista')
+    for item in frutas_set:
+        print(item, end= ' | ')
+    
     
     # Removendo
+    print()
+    print()
     remover = input('Qual item você deseja remover? ').capitalize().strip()
-    frutas_set.remove(remover)
+    if ((remover == ' ') or (remover not in frutas_set)):
+        print('Valor inválido! Tente novamente.')
+    else:
+        frutas_set.remove(remover)
     
+    os.system('cls')
+    print('Item(ns) presentes no conjunto')
+    print('-' * 70)
     for item in frutas_set:
-        print(item, end=' ')
+        print(item, end= ' | ')
     
+    print()
+    print()
     continua = input('Deseja encerrar o programa? (s/n): ').lower().strip()
     if continua == 's':
-        os.system()
+        os.system('cls')
         break
     else:
-        os.system()
+        os.system('cls')
