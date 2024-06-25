@@ -37,7 +37,7 @@ while True:
     print('-' * 70)
     # Exibindo os valores presentes na lista
     if (len(valores_set) == 0): # Caso não possua nenhum valor
-        print('Insira itens a lista.')
+        print('Insira itens ao conjunto.')
     for item in valores_set:
         print(item, end= ' | ')
     
@@ -58,7 +58,7 @@ while True:
     print('Item(ns) presentes no conjunto após remove() ser aplicado.')
     print('-' * 70)
     if (len(valores_set) == 0): # Caso não possua nenhum valor
-        print('Não há itens na lista.')
+        print('Não há itens no conjunto.')
     for item in valores_set:
         print(item, end= ' | ')
     
