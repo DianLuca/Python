@@ -10,51 +10,61 @@ import os
 
 
 os.system('cls')
-frutas_set = set()
+valores_set = set() # Iniciando um conjunto vazio
 
 while True:
     print('UTILIZANDO O MÉTODO REMOVE()')
     print('-' * 70)
-    # Adicionando valores a lista
-    num_item = input('Quantos itens deseja inserir? ').strip()
-    if num_item == '' or not num_item.isnumeric():
+    # Adicionando valores a lista para ter itens para excluir
+    num_item = input('Quantos item(ns) deseja inserir? ').strip()
+    # Validando entrada
+    if ((num_item == '') or not (num_item.isnumeric())):
         num_item = 0
     else:
-        num_item = int(num_item)
+        num_item = int(num_item) # Casting
     
     for item in range(num_item):
-        item = input(f'Insira a fruta {item + 1}: ').capitalize()
-        if item == '' or not item.isalpha():
+        item = input(f'Insira um valor qualquer {item + 1}: ').capitalize()
+        # Validando a entrada para que não seja inseeridos valores vazios
+        if ((item == '') or not (item.isalpha())):
             print('Valor Inválido')
         else:
-            frutas_set.add(item)
+            # Adicionando os itens ao set
+            valores_set.add(item)
     
     os.system('cls')
-    print('Item(ns) presentes no conjunto')
+    print('Item(ns) presentes no conjunto:')
     print('-' * 70)
-    if len(frutas_set) <= 0:
-        print('Insira itens a lista')
-    for item in frutas_set:
+    # Exibindo os valores presentes na lista
+    if (len(valores_set) == 0): # Caso não possua nenhum valor
+        print('Insira itens a lista.')
+    for item in valores_set:
         print(item, end= ' | ')
     
     
     # Removendo
     print()
     print()
+    # SElecionando o valor para ser removido e validando a entrada
     remover = input('Qual item você deseja remover? ').capitalize().strip()
-    if ((remover == ' ') or (remover not in frutas_set)):
+    # Caso não exista valores no conjunto nada será removido
+    if ((remover == ' ') or (remover not in valores_set)):
         print('Valor inválido! Tente novamente.')
     else:
-        frutas_set.remove(remover)
+        valores_set.remove(remover)
     
     os.system('cls')
-    print('Item(ns) presentes no conjunto')
+    # Exibindo os itens presentes no conjunto após a exclusão
+    print('Item(ns) presentes no conjunto após remove() ser aplicado.')
     print('-' * 70)
-    for item in frutas_set:
+    if (len(valores_set) == 0): # Caso não possua nenhum valor
+        print('Não há itens na lista.')
+    for item in valores_set:
         print(item, end= ' | ')
     
     print()
     print()
+    # Encerra ou não o sistema
     continua = input('Deseja encerrar o programa? (s/n): ').lower().strip()
     if continua == 's':
         os.system('cls')
