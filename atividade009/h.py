@@ -27,19 +27,24 @@ while True:
         pessoas['peso'] = input('Insira o peso: ')
         pessoas['altura'] = input('Insira a altura: ')
         os.system('cls')
-        # cadastro.append(pessoas.copy())
+        cadastro.append(pessoas.copy())
     
     print('Itens inseridos para cadastrado:')
-    for chave, valor in pessoas.items():
-        print(f'{chave}: {valor}', end=' | ')
+    for pessoa in cadastro:
+        for chave, valor in pessoa.items():
+            print(f'{chave}: {valor}', end=(' | '))
+        print()
+    
     print()
-        
     input('Pressione Enter para continuar.')
        
     apagar = input('Qual dado deseja apagar algum dos dados? ')
-    removido = pessoas.pop(apagar, 'Elemento não encontrado.')
-    print(f'O elemento {removido}')
-    cadastro.append(pessoas.copy())
+    for pessoa in cadastro: # removendo o item já cadastrado em uma lista de dicionários
+        if apagar in pessoa: # Verificando se dado foi encontrado.
+            pessoa.pop(apagar)
+        else:
+            print('Elemento não encontrado.')
+    
     
     os.system('cls')
     
@@ -49,5 +54,6 @@ while True:
             print(f'{chave}: {valor}', end=(' | '))
         print()
     
+    print()
     input('Pressione Enter para continuar.')
     os.system('cls')
