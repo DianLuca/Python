@@ -21,11 +21,11 @@ def calcular_velocidade_media(distancia, tempo):
         unidade_tempo = 's'
         
     velocidade_media = (distancia / dividendo_distancia) / (tempo / dividendo_tempo)
-    return velocidade_media, medida, unidade_tempo
+    return velocidade_media
+
 
 distancia = float(input('Digite a distância percorrida (em km): '))
 tempo = float(input('Digite a tempo gasto (em horas): '))
-unidade = input('Você deseja fazer utilizar kh/m ou m/s: ')
 
 
 # Calcular a velocidade média usando a função criada
