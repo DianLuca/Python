@@ -65,13 +65,26 @@ erros = 0
 total_acertos = 0
 total_erros = 0
 
-for estado in estados_brasil:
-    quiz = input(f'Qual é a capital do Estado do {estado["estado"]}? ').strip()
-    acertos, erros = verificar(quiz, estado, acertos, erros)
-    total_acertos += acertos
-    total_erros += erros
-    # Parada em caso de erro
-    if erros == 1:
+while True:
+    os.system('cls')
+    print('|--- QUIZ - ESTADOS E CAPITAIS ---|')
+    iniciar = input('1 - INICIA O QUIZ | 0 - SAIR : ')
+    if iniciar == '1':
+        print('ERRAR FINALIZA O QUIZ')
+        for estado in estados_brasil:
+            quiz = input(f'Qual é a capital do Estado do '
+                        + f'{estado["estado"]}? ').strip().title()
+            os.system('cls')
+            acertos, erros = verificar(quiz, estado, acertos, erros)
+            total_acertos += acertos
+            total_erros += erros
+            # Parada em caso de erro
+            if erros == 1:
+                break
+            
+        input(f'Você acertou {acertos} das {len(estados_brasil)} '
+              + f'capitais do país ! Pressione Enter para continuar ')
+        os.system('cls')
+    elif iniciar == '0':
+        print('Obrigado por participar! Programa finalizado.')
         break
-
-print(f'Você obteve {acertos} acertos!')
