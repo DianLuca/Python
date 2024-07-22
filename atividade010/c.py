@@ -12,21 +12,52 @@ import os
 
 os.system('cls')
 
-cadastro = [
-    {'nome': 'Dian', 'matricula': '007', 'data_nascimento': '00/00/0000'}
-]
+cadastro = []
 aluno = {}
 
-def encontrar():
-    aluno = input('Insira o nome para ser verificado: ')
+def encontrar(aluno):
     for alunos in cadastro:
         if aluno in alunos['nome']:
+            print(f'O aluno: {aluno} está na lista!')
             for k, v in alunos.items():
                 print(f'{k}: {v}', end=' | ')
         else:
-            print(f'O {aluno} não está presente')
+            print(f'O aluno: {aluno} não está presente.')
+
+def exibir():
+    if len(cadastro) == 0:
+        print('O cadastro está vazio!')
+    else:
+        for item in cadastro:
+            for k, v in item.items():
+                print(f'{k}: {v}', end=' | ')
+            print()
+        
+def cadastrar(**aluno):
+    alunos = aluno
+    cadastro.append(alunos.copy())
 
 while True:
-    encontrar()
-    print()
-    input('Enter para continuar ')
+    os.system('cls')
+    print('CADASTRO DE ALUNOS')
+    menu = input('1 - CADASTRAR | 2 - EXIBIR | 3 - BUSCAR | 0 - SAIR: ')
+    if menu == '1':
+        while True:
+            nome = input('Insira o nome do aluno: ').title().strip()
+            matricula = input('Insira o nome do matricula: ')
+            data_de_nascimento = input('Insira o nome do data de nascimento: ')
+            cadastrar(nome=nome, matricula=matricula,
+                data_de_nascimento=data_de_nascimento)
+            break
+    elif menu == '2':
+        exibir()
+        print()
+        input('Pressione Enter')
+    elif menu == '3':
+        aluno = input('Insira o nome para ser verificado: ')
+        encontrar(aluno)
+        print()
+        input('Pressione Enter')
+    elif menu == '0':
+        print('Encerrando o sistema!')
+        break

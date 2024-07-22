@@ -16,39 +16,28 @@ pares = []
 impares = []
 
 
+def adicinando_valores(valor):
+    lista_numeros.extend(valor)
+
+
 def ordenando(*lista_numeros):
-    par = 0
-    impar = 0
     for i in lista_numeros:
         i = int(i)
-        if i % 2 == 0:
-            pares.append(i)
-            par += 1
-        else:
-            impares.append(i)
-            impar += 1
-    return par, impar
+        pares.append(i) if i % 2 == 0 else impares.append(i)
 
-
-def adicinando_valores():
-    while True:
-        os.system('cls')
-        valor = input('Adicione um valor: ').strip()
-        lista_numeros.append(valor)
-        continuar = input(
-            'Deseja parar de inserir valores (S - Sim)? ').lower().strip()
-        if continuar == 's' or (valor == '' and not valor.isnumeric()):
-            break
 
 while True:
-    adicinando_valores()
-    par, impar = ordenando(*lista_numeros)
+    os.system('cls')
+    valor = input('Adicione um valor: ').strip()
+    adicinando_valores(valor)
+    ordenando(valor)
+    par, impar = len(pares), len(impares)
 
     print(f'Existem {par} números pares são: {pares} ')
-    print(f'Existem {impar} números pares são: {impares} ')
+    print(f'Existem {impar} números impares são: {impares} ')
 
     input('Continue...')
-    # Apagando os itens de todas as listas para inserir novos
-    pares.clear() 
-    impares.clear()
-    lista_numeros.clear()
+    continuar = input(
+        'Deseja parar de inserir valores (S - Sim)? ').lower().strip()
+    if continuar == 's' or (valor == '' and not valor.isnumeric()):
+        break
