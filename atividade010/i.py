@@ -73,7 +73,7 @@ while True:
         print('ERRAR FINALIZA O QUIZ')
         for estado in estados_brasil:
             quiz = input(f'Qual é a capital do Estado do '
-                        + f'{estado["estado"]}? ').strip().title()
+                         + f'{estado["estado"]}? ').strip().title()
             os.system('cls')
             acertos, erros = verificar(quiz, estado, acertos, erros)
             total_acertos += acertos
@@ -81,7 +81,7 @@ while True:
             # Parada em caso de erro
             if erros == 1:
                 break
-            
+
         input(f'Você acertou {acertos} das {len(estados_brasil)} '
               + f'capitais do país ! Pressione Enter para continuar ')
         os.system('cls')

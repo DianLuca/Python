@@ -55,11 +55,11 @@ while True:
     if menu == '1':
         while True:
             print('MENU DE CADASTRO')
-            # codigo = input('Insira o seu código: ').strip()
+            codigo = input('Insira o seu código: ').strip()
             nome = input('Insira o seu nome: ').title().strip()
             altura = input('Insira o sua altura: ').strip().replace(',', '.')
             peso = input('Insira o seu peso: ').strip().replace(',', '.')
-            cadastro(codigo=len(clientes)+1, nome=nome, altura=altura, peso=peso)
+            cadastro(codigo=codigo, nome=nome, altura=altura, peso=peso)
             os.system('cls')
             break
     elif menu == '2':

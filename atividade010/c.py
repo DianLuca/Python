@@ -3,9 +3,9 @@
 # Autor: Dian Luca Valente Nascimento
 # Data: 12/07/2024
 
-# Crie uma função que verifica se uma aluno está cadastrado ou não em um 
+# Crie uma função que verifica se uma aluno está cadastrado ou não em um
 # dicionário. Se estiver cadastrado, imprima o nome desse aluno e o resto dos
-# seus dados. O dicionário deverá conter nome, matrícula e a data de 
+# seus dados. O dicionário deverá conter nome, matrícula e a data de
 # nascimento do aluno.
 import os
 
@@ -14,6 +14,7 @@ os.system('cls')
 
 cadastro = []
 aluno = {}
+
 
 def encontrar(aluno):
     for alunos in cadastro:
@@ -24,6 +25,7 @@ def encontrar(aluno):
         else:
             print(f'O aluno: {aluno} não está presente.')
 
+
 def exibir():
     if len(cadastro) == 0:
         print('O cadastro está vazio!')
@@ -32,10 +34,12 @@ def exibir():
             for k, v in item.items():
                 print(f'{k}: {v}', end=' | ')
             print()
-        
+
+
 def cadastrar(**aluno):
     alunos = aluno
     cadastro.append(alunos.copy())
+
 
 while True:
     os.system('cls')
@@ -47,7 +51,7 @@ while True:
             matricula = input('Insira o nome do matricula: ')
             data_de_nascimento = input('Insira o nome do data de nascimento: ')
             cadastrar(nome=nome, matricula=matricula,
-                data_de_nascimento=data_de_nascimento)
+                      data_de_nascimento=data_de_nascimento)
             break
     elif menu == '2':
         exibir()

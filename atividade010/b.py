@@ -37,7 +37,7 @@ while True:
             matricula = input('Insira o nome do matricula: ')
             data_de_nascimento = input('Insira o nome do data de nascimento: ')
             cadastrar(nome=nome, matricula=matricula,
-                data_de_nascimento=data_de_nascimento)
+                      data_de_nascimento=data_de_nascimento)
             break
     elif menu == '2':
         exibir()

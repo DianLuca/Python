@@ -22,7 +22,7 @@ def calcular(operacao, a, b):
     a = float(a)
     b = float(b)
     if operacao == 'adicao':
-        return a + b 
+        return a + b
     elif operacao == 'subtracao':
         return a - b
     elif operacao == 'multiplicacao':
@@ -40,12 +40,12 @@ def calcular(operacao, a, b):
 
 # Opções para operações
 operacoes = {
-    '1' : 'adicao',
-    '2' : 'subtracao',
-    '3' : 'multiplicacao',
-    '4' : 'divisao',
-    '5' : 'divisao inteira',
-    '6' : 'resto',
+    '1': 'adicao',
+    '2': 'subtracao',
+    '3': 'multiplicacao',
+    '4': 'divisao',
+    '5': 'divisao inteira',
+    '6': 'resto',
 }
 
 while True:
@@ -57,7 +57,8 @@ while True:
 
     if menu in operacoes:
         os.system('cls')
-        operacao = operacoes[menu]  # Operação que deseja realizar com base no menu
+        # Operação que deseja realizar com base no menu
+        operacao = operacoes[menu]
         print(operacao.upper())
         print('Insira números entre 0 e 11')
         # Utilizando list comprehension para inserir os valores
@@ -69,7 +70,3 @@ while True:
 
     elif menu == '7':
         break
-
-    # else:
-    #     print()
-    #     input('OPÇÃO INVÁLIDA, TENTE NOVAMENTE! ')
