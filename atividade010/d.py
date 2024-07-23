@@ -17,7 +17,20 @@ def converter(fahrenheit):
     return fahrenheit_celsius
 
 
-fahrenheit = input('Insira a temperatura em fahrenheit: ')
-celcius = converter(fahrenheit)
+while True:
+    os.system('cls')
+    print('|--- CONVERSOR DE TEMPERATURA ---|')
+    menu = input('1 - FAHRENHEIT -> CELSIUS | 0 - SAIR : ')
+    
+    if menu == '1':
+        os.system('cls')
+        print('CONVERTENDO FAHRENHEIT -> CELSIUS')
+        fahrenheit = input('Insira a temperatura em fahrenheit: ')
+        celcius = converter(fahrenheit)
 
-print(f'{fahrenheit}°F = {celcius}°C')
+        print(f'{fahrenheit}°F = {celcius}°C')
+        input('Pressione qualquer tecla para voltar ao menu. ')
+        
+    elif menu == '0':
+        print('Programa finalizado!')
+        break

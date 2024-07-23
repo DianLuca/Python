@@ -3,12 +3,13 @@
 # Autor: Dian Luca Valente Nascimento
 # Data: 12/07/2024
 
-# Crie uma função que receba a altura e o peso de uma pessoa. Depois retorne 
+# Crie uma função que receba a altura e o peso de uma pessoa. Depois retorne
 # o seu IMC.
 import os
 
 
 os.system('cls')
+
 
 def calcular(altura, peso):
     altura = float(altura)
@@ -16,9 +17,20 @@ def calcular(altura, peso):
     calcula_imc = (peso / (altura**2))
     return calcula_imc
 
-peso = input('Insira o seu peso: ')
-altura = input('Insira o seu altura: ')
 
-imc = calcular(altura, peso)
+while True:
+    os.system('cls')
+    print('|--- CALCULANDO O IMC ---|')
+    menu = input('1 - IMC | 0 - Sair: ')
+    if menu == '1':
+        os.system('cls')
+        print('|--- CALCULANDO O IMC ---|')
+        peso = input('Insira o seu peso: ').strip()
+        altura = input('Insira o seu altura: ').replace(',','.').strip()
 
-print(f'Altura: {altura} m \nPeso: {peso} Kg \nIMC: {imc:.2f}')
+        imc = calcular(altura, peso)
+        print(f'Altura: {altura} m \nPeso: {peso} Kg \nIMC: {imc:.2f}')
+        input('Pressione qualquer tecla para voltar ao menu. ')
+    elif menu == '0':
+        print('Programa finalizado!')
+        break
