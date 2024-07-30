@@ -26,7 +26,7 @@ while True:
         os.system('cls')
         print('|--- CALCULANDO O IMC ---|')
         peso = input('Insira o seu peso: ').strip()
-        altura = input('Insira o seu altura: ').replace(',','.').strip()
+        altura = input('Insira o seu altura: ').replace(',', '.').strip()
 
         imc = calcular(altura, peso)
         print(f'Altura: {altura} m \nPeso: {peso} Kg \nIMC: {imc:.2f}')

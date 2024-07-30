@@ -21,7 +21,7 @@ while True:
     os.system('cls')
     print('|--- CONVERSOR DE TEMPERATURA ---|')
     menu = input('1 - FAHRENHEIT -> CELSIUS | 0 - SAIR : ')
-    
+
     if menu == '1':
         os.system('cls')
         print('CONVERTENDO FAHRENHEIT -> CELSIUS')
@@ -30,7 +30,7 @@ while True:
 
         print(f'{fahrenheit}°F = {celcius}°C')
         input('Pressione qualquer tecla para voltar ao menu. ')
-        
+
     elif menu == '0':
         print('Programa finalizado!')
         break
