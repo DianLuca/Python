@@ -16,11 +16,11 @@ pares = []
 impares = []
 
 
-def adicinando_valores(valor):
+def adicinando_valores(*valor):
     lista_numeros.extend(valor)
 
 
-def ordenando(*lista_numeros):
+def ordenando(lista_numeros):
     for i in lista_numeros:
         i = int(i)
         pares.append(i) if i % 2 == 0 else impares.append(i)
@@ -28,7 +28,7 @@ def ordenando(*lista_numeros):
 
 while True:
     os.system('cls')
-    valor = input('Adicione um valor: ').strip()
+    valor = input('Adicione um valor: ').strip().split()
     adicinando_valores(valor)
     ordenando(valor)
     par, impar = len(pares), len(impares)

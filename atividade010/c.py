@@ -27,13 +27,13 @@ def encontrar(aluno):
 
 
 def exibir():
-    if len(cadastro) == 0:
-        print('O cadastro está vazio!')
-    else:
+    if cadastro:
         for item in cadastro:
             for k, v in item.items():
                 print(f'{k}: {v}', end=' | ')
             print()
+    else:
+        print('O cadastro está vazio!')
 
 
 def cadastrar(**aluno):
