@@ -1,43 +1,70 @@
 import csv
 import os
 
-cadastro = [
-    {'nome':'Bob','idade': '25','cidade':'Juiz de Fora'}
-]
 pasta = 'testes/arquivo_csv/'
-os.makedirs(pasta, exist_ok=True)
+
 # Caminho do arquivo
 arquivo = 'testes/arquivo_csv/manipulacao.csv'
 
 caminho = os.path.join(pasta, arquivo)
+
+cadastro = []
+
+registro = {}
+
+# A intenção é criar um arquivo e se iniciar novamente os dados contindos 
+# nele não sejam alterados
+os.makedirs(pasta, exist_ok=True)
+
+if arquivo:
+    with open(arquivo, 'w', newline='') as arquivo_csv:
+        campos = ['nome', 'idade']
+            
+        escrever = csv.DictWriter(arquivo_csv, fieldnames=campos, delimiter=';')
+        
+        escrever.writeheader()
+        
+        arquivo_csv.truncate()
+        
+while True:
+
+
+    os.system('cls')
+    menu = input('1 - Cadastro | 0 - Sair: ')
+    while menu == '1':
+        
+        nome = input('Insira seu nome: ')
+        idade = input('Insira sua idade: ')
+        registro['nome'] = nome
+        registro['idade'] = idade
+        cadastro.append(registro.copy())
+        with open(arquivo, mode='a', newline='', encoding='utf-8') as arquivo_csv:
+            
+            campos = ['nome', 'idade']
+            escrever = csv.DictWriter(arquivo_csv, fieldnames=campos, delimiter=';')
+            
+            # escrever.writeheader()
+            escrever.writerows(cadastro)
+        input(cadastro)
+        # Cadastrando um arquivo
+        break
+    if menu == '0':
+        print('Programa Encerrado!')
+        break
+    
+
+
 # Abrindo o arquivo em modo "w+"
-with open(arquivo, mode='w+', newline='', encoding='utf-8') as file:
+    # # Criando um objeto reader para ler o CSV
+    # reader = csv.reader(arquico_csv)
     
-    campos = ['nome', 'idade', 'cidade']
+    # # Lendo o conteúdo do arquivo e armazenando na memória
+    # linhas = list(reader)
     
-    escrever = csv.DictWriter(file, fieldnames=campos, delimiter=';')
+    # # Criando um objeto writer para reescrever o CSV com os dados modificados
+    # escrever.writeheader()
+    # escrever.writerows(cadastro)
     
-    escrever.writeheader()
-    escrever.writerows(cadastro)
-    # Criando um objeto reader para ler o CSV
-    reader = csv.reader(file)
-    
-    # Lendo o conteúdo do arquivo e armazenando na memória
-    linhas = list(reader)
-    
-    # Modificando o dado desejado
-    for linha in cadastro:
-        if linha['nome'] == 'Bob':  # Verifica se a primeira coluna (Nome) é 'Bob'
-            linha['idade'] = '26'  # Altera a idade (segunda coluna)
-    
-    # Movendo o cursor para o início do arquivo para sobrescrever
-    file.seek(0)
-    
-    # Criando um objeto writer para reescrever o CSV com os dados modificados
-    escrever.writeheader()
-    escrever.writerows(cadastro)
-    
-    # Truncando o arquivo para remover qualquer dado extra que permaneceu
-    file.truncate()
+    # # Truncando o arquivo para remover qualquer dado extra que permaneceu
 
 print("Alteração realizada com sucesso!")
