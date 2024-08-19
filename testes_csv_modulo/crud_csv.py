@@ -19,6 +19,7 @@ while True:
         idade = input('Insira a idade: ')
         registro['nome'] = nome
         registro['idade'] = idade
+        cadastro.clear()
         cadastro.append(registro.copy())
         adicionar_arquivo(cadastro)
         input(f'O item "{nome}" foi adicionado com sucesso! ')
