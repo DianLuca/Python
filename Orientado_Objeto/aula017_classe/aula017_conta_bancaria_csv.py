@@ -39,13 +39,13 @@ while True:
         break
     
 # Caminho para a pasta onde o arquivo será salvo
-pasta = '/Orientado_Objeto/aula017_classe'
+pasta = 'Orientado_Objeto/aula017_classe/arquivo_csv'
 
 # Verificando se a pasta existe, se não, irá criá-la
 os.makedirs(pasta, exist_ok=True)
 
 # Nome para o arquivo CSV para gravar as informações
-arquivo = '/Orientado_Objeto/aula017_classe/conta.csv'
+arquivo = 'Orientado_Objeto/aula017_classe/arquivo_csv/conta.csv'
 
 # Escrever a lista de dicionários no arquivo CSV
 with open(arquivo, mode='w', newline='') as conta:
