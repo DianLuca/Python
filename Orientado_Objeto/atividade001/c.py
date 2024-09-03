@@ -7,6 +7,7 @@
 import os
 
 
+# Remover, posso fazer validação dentro da função calcular_media
 def validar_valores(*notas):
     try:
         for item in notas:
@@ -29,9 +30,13 @@ class Notas:
         self.nota3 = nota3
 
     def calcular_media(self, nota, nota1, nota2, nota3):
-        total_notas = float(nota) + float(nota1) + float(nota2) + float(nota3)
-        media = total_notas / 4
-        return media
+        try:
+            total_notas = float(nota) + float(nota1) + \
+                float(nota2) + float(nota3)
+            media = total_notas / 4
+            return f'A média das notas foi: {media}'
+        except (TypeError, ValueError):
+            return 'Insira apenas valores numéricos!'
 
 
 while True:
@@ -44,13 +49,9 @@ while True:
         nota1 = input('Insira o valor da segunda nota: ')
         nota2 = input('Insira o valor da terceira nota: ')
         nota3 = input('Insira o valor da quarta nota: ')
-        status = validar_valores(nota, nota1, nota2, nota3)
-        if status == True:
-            notas = Notas(nota, nota1, nota2, nota3)
-            resultado = notas.calcular_media(nota, nota1, nota2, nota3)
-            input(f'A média das notas foi: {resultado}')
-        else:
-            input('Insira apenas valores numéricos! ')
+        notas = Notas(nota, nota1, nota2, nota3)
+        resultado = notas.calcular_media(nota, nota1, nota2, nota3)
+        input(resultado)
 
     elif menu == '0':
         break
