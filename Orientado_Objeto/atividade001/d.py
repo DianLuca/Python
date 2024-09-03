@@ -18,7 +18,7 @@ class Calcular:
     def dividir(self, valor, valor1):
         try:
             resto = float(valor) / float(valor1)
-            return f'O resultado da divisão é: {resto}'
+            return f'O resultado da divisão é: {resto:4f}'
         except ZeroDivisionError:
             return 'Impossível realizar divisão por zero!'
         except (TypeError, ValueError):
