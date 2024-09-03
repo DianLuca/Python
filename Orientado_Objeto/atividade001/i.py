@@ -7,7 +7,7 @@
 import os
 
 
-valor_dolar = 5.64  # Cotação de 19/04/2024
+valor_dolar = 5.64  # Cotação de 03/09/2024
 
 
 class Cambio:
@@ -20,7 +20,10 @@ class Cambio:
             conversao_dolar_real = valor_dolar * moeda
             conversao_real_dolar = moeda / valor_dolar
             return f'$ {moeda:.2f} dólar(es) corresponde a: R$ {conversao_dolar_real:.2f} \nR$ {moeda:.2f} real(is) correspondem a: $ {conversao_real_dolar:.2f}'
-
+        
+        except ZeroDivisionError:
+            return 'Impossível realizar divisão por zero! '
+            
         except (TypeError, ValueError):
             return 'Insira apenas valores numéricos! '
 

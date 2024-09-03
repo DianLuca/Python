@@ -7,18 +7,6 @@
 import os
 
 
-# Remover, posso fazer validação dentro da função calcular_media
-def validar_valores(*notas):
-    try:
-        for item in notas:
-            float(item)
-    except TypeError:
-        return False
-    except ValueError:
-        return False
-    return True
-
-
 total_notas = 0
 
 
@@ -35,6 +23,8 @@ class Notas:
                 float(nota2) + float(nota3)
             media = total_notas / 4
             return f'A média das notas foi: {media}'
+        except ZeroDivisionError:
+            return 'Impossível realizar divisão por zero! '
         except (TypeError, ValueError):
             return 'Insira apenas valores numéricos!'
 
