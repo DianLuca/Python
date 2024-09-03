@@ -12,13 +12,13 @@ resto = 0
 
 class Calcular:
     def __init__(self, valor, valor1):
-        self.valor = valor
-        self.valor1 = valor1
+        self.valor = float(valor)
+        self.valor1 = float(valor1)
 
-    def dividir(self, valor, valor1):
+    def dividir(self):
         try:
-            resto = float(valor) / float(valor1)
-            return f'O resultado da divisão é: {resto:4f}'
+            resto = self.valor / self.valor1
+            return f'O resultado da divisão é: {resto:.4f}'
         except ZeroDivisionError:
             return 'Impossível realizar divisão por zero!'
         except (TypeError, ValueError):
@@ -33,7 +33,7 @@ while True:
         valor = input('Insira o primeiro valor: ')
         valor1 = input('Insira o segundo valor: ')
         calcular = Calcular(valor, valor1)
-        resultado = calcular.dividir(valor, valor1)
+        resultado = calcular.dividir()
         input(f'{resultado}')
 
     elif menu == '0':
