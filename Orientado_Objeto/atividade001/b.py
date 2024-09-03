@@ -10,12 +10,11 @@ import datetime
 class Idade:
     def __init__(self, ano_nascimento):
         self.ano_nascimento = ano_nascimento
-    
+
     def calcular_idade(self, ano_nascimento):
         ano_atual = datetime.datetime.now().year
         idade = int(ano_atual) - ano_nascimento
         return idade
-    
 
 
 while True:
