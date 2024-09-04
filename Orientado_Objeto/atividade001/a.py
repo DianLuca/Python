@@ -13,16 +13,16 @@ class Calcular:
         self.valor1 = valor1
         self.valor2 = valor2
 
-    def somar(self, valor, valor1, valor2):
+    def somar(self):
         try:
-            soma = float(valor) + float(valor1) + float(valor2)
+            soma = float(self.valor) + float(self.valor1) + float(self.valor2)
             return f'O Resultado da soma dos 3 valores: {soma}.'
         except (TypeError, ValueError):
             return 'Insira apenas valores numéricos'
 
-    def multiplicar(self, valor, valor1, valor2):
+    def multiplicar(self):
         try:
-            multiplica = float(valor) * float(valor1) * float(valor2)
+            multiplica = float(self.valor) * float(self.valor1) * float(self.valor2)
             return f'O Resultado da multiplicação dos 3 valores: {multiplica}'
         except (TypeError, ValueError):
             return 'Insira apenas valores numéricos'
@@ -38,7 +38,7 @@ while True:
         valor1 = input('Insira o segundo para adicionar: ')
         valor2 = input('Insira o terceiro para adicionar: ')
         calcular = Calcular(valor, valor1, valor2)
-        resultado = calcular.somar(valor, valor1, valor2)
+        resultado = calcular.somar()
         input(resultado)
 
     elif menu == '2':
@@ -47,7 +47,7 @@ while True:
         valor1 = input('Insira o segundo para multiplicar: ')
         valor2 = input('Insira o terceiro para multiplicar: ')
         calcular = Calcular(valor, valor1, valor2)
-        resultado = calcular.multiplicar(valor, valor1, valor2)
+        resultado = calcular.multiplicar()
         input(resultado)
 
     elif menu == '0':

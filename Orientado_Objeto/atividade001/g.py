@@ -10,9 +10,9 @@ class Conversor:
     def __init__(self, metros):
         self.metros = metros
 
-    def converter(self, metros):
+    def converter(self):
         try:
-            metros = float(metros)
+            metros = float(self.metros)
             centimetros = metros * 100
             milimetros = metros * 1000
             return f'{metros} metros possuí em centímetros: {centimetros:.0f} cm e em milímetros: {milimetros:.0f} mm'
@@ -33,7 +33,7 @@ while True:
         break
     else:
         conversor = Conversor(metros)
-        resultado = conversor.converter(metros)
+        resultado = conversor.converter()
 
     print('-' * 70)
     input(f'--- RESULTADO --- \n{resultado}\n' + '=' * 70)

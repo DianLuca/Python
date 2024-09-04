@@ -11,9 +11,9 @@ class Idade:
     def __init__(self, ano_nascimento):
         self.ano_nascimento = ano_nascimento
 
-    def calcular_idade(self, ano_nascimento):
+    def calcular_idade(self):
         ano_atual = datetime.datetime.now().year
-        idade = int(ano_atual) - ano_nascimento
+        idade = int(ano_atual) - self.ano_nascimento
         return idade
 
 
@@ -21,6 +21,6 @@ while True:
     os.system('cls')
     nascimento = int(input('Insira seu ano de nascimento: '))
     idade = Idade(nascimento)
-    resultado = idade.calcular_idade(nascimento)
+    resultado = idade.calcular_idade()
     input(f'Sua idade atual é: {resultado} ano(s)')
     break

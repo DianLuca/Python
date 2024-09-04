@@ -14,9 +14,9 @@ class Cambio:
     def __init__(self, moeda):
         self.moeda = moeda
 
-    def conversor(self, moeda):
+    def conversor(self):
         try:
-            moeda = float(moeda)
+            moeda = float(self.moeda)
             conversao_dolar_real = valor_dolar * moeda
             conversao_real_dolar = moeda / valor_dolar
             return f'$ {moeda:.2f} dólar(es) corresponde a: R$ {conversao_dolar_real:.2f} \nR$ {moeda:.2f} real(is) correspondem a: $ {conversao_real_dolar:.2f}'
@@ -41,7 +41,7 @@ while True:
         break
     else:
         cambio = Cambio(valor_real)
-        valor_convertido = cambio.conversor(valor_real)
+        valor_convertido = cambio.conversor()
 
     print('-' * 70)
     print('--- CONVERSÃO DE VALORES')

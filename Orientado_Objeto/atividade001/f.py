@@ -11,9 +11,9 @@ class Operacao:
     def __init__(self, valor):
         self.valor = valor
     
-    def multiplicar(self, valor):
+    def multiplicar(self):
         try:
-            valor = float(valor)
+            valor = float(self.valor)
             dobro = valor * 2
             triplo = valor * 3
             return f'O dobro e o triplo do valor {valor} são respectivamente: {dobro} e {triplo}'
@@ -32,7 +32,7 @@ while True:
         break
     else:
         operacao = Operacao(valor)
-        resultado = operacao.multiplicar(valor)
+        resultado = operacao.multiplicar()
 
     print('-' * 70)
     input(f'--- RESULTADO --- \n{resultado}\n' + '=' * 70)

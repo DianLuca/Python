@@ -7,20 +7,17 @@
 import os
 
 
-tabuada_completa = []
-
-
 class Tabuada:
     def __init__(self, numero):
         self.numero = numero
 
-    def multiplicar(self, numero):
+    def multiplicar(self):
         try:
-            tabuada_completa.clear()
-            numero = int(numero)
+            numero = int(self.numero)
             for i in range(1, 11):
                 resultado = numero * i
-                tabuada_completa.append(resultado)
+                print(f'{self.numero} x {i} = {resultado}', end='\n')
+
         except (TypeError, ValueError):
             return 'Insira apenas valores inteiros e numéricos! '
 
@@ -32,15 +29,10 @@ while True:
     if menu == '1':
         numero = input('Insira um número inteiro: ')
         tabuada = Tabuada(numero)
-        resultado = tabuada.multiplicar(numero)
         print(f'Tabuada completa no número {numero}:')
-        if tabuada_completa:
-            for i in tabuada_completa:
-                print(i, end=', ')
-        else:
-            print(resultado)
+        resultado = tabuada.multiplicar()
         print()
         input('Pressione qualquer tecla para voltar ao menu: ')
-        
+
     elif menu == '0':
         break

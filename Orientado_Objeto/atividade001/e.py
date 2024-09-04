@@ -11,9 +11,9 @@ class Adjacentes:
     def __init__(self, valor):
         self.valor = valor
 
-    def sucessor_antecessor(self, valor):
+    def sucessor_antecessor(self):
         try:
-            valor = float(valor)
+            valor = float(self.valor)
             antecessor = valor - 1
             sucessor = valor + 1
             return f'O antessessor e o sucessor do valor: {valor}, são os seguintes respectivamentes: {antecessor} e {sucessor}'
@@ -34,5 +34,5 @@ while True:
         break
     else:
         adjacentes = Adjacentes(valor)
-        resultado = adjacentes.sucessor_antecessor(valor)
+        resultado = adjacentes.sucessor_antecessor()
         input(resultado)

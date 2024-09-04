@@ -12,12 +12,12 @@ resto = 0
 
 class Calcular:
     def __init__(self, valor, valor1):
-        self.valor = float(valor)
-        self.valor1 = float(valor1)
+        self.valor = valor
+        self.valor1 = valor1
 
     def dividir(self):
         try:
-            resto = self.valor / self.valor1
+            resto = float(self.valor) / float(self.valor1)
             return f'O resultado da divisão é: {resto:.4f}'
         except ZeroDivisionError:
             return 'Impossível realizar divisão por zero!'

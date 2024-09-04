@@ -11,10 +11,10 @@ class Retangulo:
         self.base = base
         self.altura = altura
         
-    def calcular_perimetro(self, base, altura):
+    def calcular_perimetro(self):
         try:
-            base = float(base)
-            altura = float(altura)
+            base = float(self.base)
+            altura = float(self.altura)
             perimetro_retangulo = 2*(base + altura)
             return f'O perímetro de um retângulo de base: {base:.2f} cm e altura: {altura:.2f} cm é de: {perimetro_retangulo:.2f} cm'
         except (TypeError, ValueError):
@@ -33,7 +33,7 @@ while True:
         base = input('Insira a base do retângulo (em cm): ')
         altura = input('Insira a altura do retângulo (em cm): ')
         retangulo = Retangulo(base, altura)
-        perimetro = retangulo.calcular_perimetro(base, altura)
+        perimetro = retangulo.calcular_perimetro()
         print('-' * 70)
         print('-- RESULTADO --')
         input(f'{perimetro}\n' + '=' * 70)

@@ -17,10 +17,10 @@ class Notas:
         self.nota2 = nota2
         self.nota3 = nota3
 
-    def calcular_media(self, nota, nota1, nota2, nota3):
+    def calcular_media(self):
         try:
-            total_notas = float(nota) + float(nota1) + \
-                float(nota2) + float(nota3)
+            total_notas = float(self.nota) + float(self.nota1) + \
+                float(self.nota2) + float(self.nota3)
             media = total_notas / 4
             return f'A média das notas foi: {media}'
         except ZeroDivisionError:
@@ -40,7 +40,7 @@ while True:
         nota2 = input('Insira o valor da terceira nota: ')
         nota3 = input('Insira o valor da quarta nota: ')
         notas = Notas(nota, nota1, nota2, nota3)
-        resultado = notas.calcular_media(nota, nota1, nota2, nota3)
+        resultado = notas.calcular_media()
         input(resultado)
 
     elif menu == '0':
