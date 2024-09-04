@@ -19,8 +19,8 @@ class Idade:
 
 while True:
     os.system('cls')
-    nascimento = int(input('Insira seu ano de nascimento: '))
-    idade = Idade(nascimento)
+    ano_nascimento = int(input('Insira seu ano de nascimento: '))
+    idade = Idade(ano_nascimento)
     resultado = idade.calcular_idade()
     input(f'Sua idade atual é: {resultado} ano(s)')
     break

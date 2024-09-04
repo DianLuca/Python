@@ -12,10 +12,10 @@ class Conversor:
 
     def converter(self):
         try:
-            metros = float(self.metros)
-            centimetros = metros * 100
-            milimetros = metros * 1000
-            return f'{metros} metros possuí em centímetros: {centimetros:.0f} cm e em milímetros: {milimetros:.0f} mm'
+            self.metros = float(self.metros)
+            centimetros = self.metros * 100
+            milimetros = self.metros * 1000
+            return f'{self.metros} metros possuí em centímetros: {centimetros:.0f} cm e em milímetros: {milimetros:.0f} mm'
         except (TypeError, ValueError):
             return 'Insira apenas valores numéricos! '
 

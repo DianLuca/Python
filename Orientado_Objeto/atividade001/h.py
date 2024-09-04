@@ -13,9 +13,9 @@ class Tabuada:
 
     def multiplicar(self):
         try:
-            numero = int(self.numero)
+            self.numero = int(self.numero)
             for i in range(1, 11):
-                resultado = numero * i
+                resultado = self.numero * i
                 print(f'{self.numero} x {i} = {resultado}', end='\n')
 
         except (TypeError, ValueError):

@@ -16,14 +16,14 @@ class Cambio:
 
     def conversor(self):
         try:
-            moeda = float(self.moeda)
-            conversao_dolar_real = valor_dolar * moeda
-            conversao_real_dolar = moeda / valor_dolar
-            return f'$ {moeda:.2f} dólar(es) corresponde a: R$ {conversao_dolar_real:.2f} \nR$ {moeda:.2f} real(is) correspondem a: $ {conversao_real_dolar:.2f}'
-        
+            self.moeda = float(self.moeda)
+            conversao_dolar_real = valor_dolar * self.moeda
+            conversao_real_dolar = self.moeda / valor_dolar
+            return f'$ {self.moeda:.2f} dólar(es) corresponde a: R$ {conversao_dolar_real:.2f} \nR$ {self.moeda:.2f} real(is) correspondem a: $ {conversao_real_dolar:.2f}'
+
         except ZeroDivisionError:
             return 'Impossível realizar divisão por zero! '
-            
+
         except (TypeError, ValueError):
             return 'Insira apenas valores numéricos! '
 

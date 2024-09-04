@@ -13,10 +13,10 @@ class Adjacentes:
 
     def sucessor_antecessor(self):
         try:
-            valor = float(self.valor)
-            antecessor = valor - 1
-            sucessor = valor + 1
-            return f'O antessessor e o sucessor do valor: {valor}, são os seguintes respectivamentes: {antecessor} e {sucessor}'
+            self.valor = float(self.valor)
+            antecessor = self.valor - 1
+            sucessor = self.valor + 1
+            return f'O antessessor e o sucessor do valor: {self.valor}, são os seguintes respectivamentes: {antecessor} e {sucessor}'
         except (TypeError, ValueError):
             return 'Insira apenas valores numéricos! '
 
