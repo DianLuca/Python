@@ -19,10 +19,13 @@ class Notas:
 
     def calcular_media(self):
         try:
-            total_notas = float(self.nota) + float(self.nota1) + \
-                float(self.nota2) + float(self.nota3)
-            media = total_notas / 4
-            return f'A média das notas foi: {media}'
+            if (float(self.nota) < 0 or float(self.nota1) < 0 or float(self.nota2) < 0 or float(self.nota3) < 0):
+                return 'Favor inserir valores maiores ou iguais a zero! '
+            else:
+                total_notas = float(self.nota) + float(self.nota1) + \
+                    float(self.nota2) + float(self.nota3)
+                media = total_notas / 4
+                return f'A média das notas foi: {media}'
         except ZeroDivisionError:
             return 'Impossível realizar divisão por zero! '
         except (TypeError, ValueError):
