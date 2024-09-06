@@ -8,11 +8,11 @@ class Triangulo:
         self.cateto_2 = cateto_2
 
 
-class TrianguloRetangulo(Triangulo): # herança
+class TrianguloRetangulo(Triangulo):  # herança
     def calcular_hipotenusa(self):
         resultado = math.sqrt(pow(self.cateto_1, 2) + pow(self.cateto_1, 2))
         return resultado
-    
+
 
 while True:
     os.system('cls')
@@ -24,3 +24,9 @@ while True:
     else:
         triangulo_retangulo = TrianguloRetangulo(cateto_1, cateto_2)
         hipotenusa = triangulo_retangulo.calcular_hipotenusa()
+
+        os.system('cls')
+
+        print(f'O triângulo retângulo de lado 1 = {cateto_1} e de lado 2 '
+              + f'{cateto_2} é igual a {hipotenusa:.2f} aproximadamente.')
+        input('Pressione qualquer tecla pra continuar... ')
