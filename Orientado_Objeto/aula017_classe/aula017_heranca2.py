@@ -10,7 +10,7 @@ class Triangulo:
 
 class TrianguloRetangulo(Triangulo):  # herança
     def calcular_hipotenusa(self):
-        resultado = math.sqrt(pow(self.cateto_1, 2) + pow(self.cateto_1, 2))
+        resultado = math.sqrt(pow(self.cateto_1, 2) + pow(self.cateto_2, 2))
         return resultado
 
 
