@@ -7,15 +7,23 @@
 import os
 
 
+class Intervalo:
+    def __init__(self, inicio, fim):
+        self.inicio = inicio
+        self.fim = fim
+    
+class Apresentar(Intervalo):
+    def exibir(self):
+        for c in range(self.fim, (self.inicio -1), -1):
+            print(c, end=' | ')
+        
+    
 os.system('cls')
 
 print('PARA CONTAGEM REGRESSIVA')
 print()
 
-a = int(input('Insira o maior número: '))
-b = int(input('Insira o menor número: '))
-print()
-c = 0
-
-for c in range(a, (b - 1), -1):
-    print(c, end=' | ')
+a = int(input('Insira o menor número: '))
+b = int(input('Insira o maior número: '))
+apresentar = Apresentar(a, b)
+apresentar.exibir() 
