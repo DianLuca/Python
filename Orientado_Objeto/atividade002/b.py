@@ -2,9 +2,21 @@
 # Turma 0152
 # Autor: Dian Luca Valente Nascimento
 # Data: 03/09/2024
-# Evolua o programa anterior para um código que pergunte ao usuário qual o 
+# Evolua o programa anterior para um código que pergunte ao usuário qual o
 # intervalo que ele deseja ver  impresso.
 import os
+
+
+class Intervalo:
+    def __init__(self, inicio, fim):
+        self.inicio = inicio
+        self.fim = fim
+
+
+class Apresentar(Intervalo):
+    def exibir(self):
+        for c in range(self.inicio, (self.fim + 1)):
+            print(c, end=' - ')
 
 
 os.system('cls')
@@ -12,9 +24,5 @@ os.system('cls')
 print('QUAL O INTERVALO DESEJADO')
 a = int(input('Insira o valor inicial: '))
 b = int(input('Insira o valor fim....: '))
-
-c = 0
-
-for c in range(a, (b + 1)):
-    print(c, end =' - ')
-    c += 1
+apresentar = Apresentar(a, b)
+exibir = apresentar.exibir()
