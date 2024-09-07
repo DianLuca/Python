@@ -10,6 +10,9 @@ class Numeros:
     def __init__(self, inicio, fim):
         self.inicio = inicio
         self.fim = fim
+        
+    def exibir(valor):
+        print(f'\nO total de valores pares é: {valor}')
 
 
 class Pares(Numeros):
@@ -19,7 +22,8 @@ class Pares(Numeros):
             if (c % 2 == 0):
                 c_par += 1
                 print(c, end=' | ')
-        return c_par
+                
+        Numeros.exibir(c_par)
 
 
 os.system('cls')
@@ -33,4 +37,3 @@ print()
 print(f'Os números pares no intervalo entre {inicio} e {fim}, serão: ')
 numeros = Pares(inicio, fim)
 c_par = numeros.par()
-print(f'\nOs existe {c_par} número(s) par(es) nesse intervalo.')
