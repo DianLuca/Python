@@ -11,7 +11,7 @@ class Numeros:
         self.inicio = inicio
         self.fim = fim
         
-    def exibir(valor):
+    def exibir(self, valor):
         print(f'\nO total de valores pares é: {valor}')
 
 
@@ -23,7 +23,7 @@ class Pares(Numeros):
                 c_par += 1
                 print(c, end=' | ')
                 
-        Numeros.exibir(c_par)
+        self.exibir(c_par)
 
 
 os.system('cls')
@@ -36,4 +36,4 @@ fim = int(input('Insira o maior número: '))
 print()
 print(f'Os números pares no intervalo entre {inicio} e {fim}, serão: ')
 numeros = Pares(inicio, fim)
-c_par = numeros.par()
+numeros.par()
