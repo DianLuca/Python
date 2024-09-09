@@ -11,13 +11,16 @@ class Numeros:
         self.inicio = inicio
         self.fim = fim
 
-    def exibir(self, primos):
-        print(f'Esses são os números primos de {
-              self.inicio} a {self.fim}: {primos}')
+    def exibir(self, inicio, fim):
+        print('Sobrecarregar variável')
 
 
 class Primos(Numeros):
-    def encontrar_primos(self):
+    def __init__(self, inicio, fim):
+        self.inicio = inicio
+        self.fim = fim
+
+    def exibir(self):
         if self.inicio < 2:
             print(f'Não existe número primo de {self.inicio}, portando '
                   + f'adotaremos o menor mais próximo: 2')
@@ -27,7 +30,7 @@ class Primos(Numeros):
                 if c % i == 0:
                     break
             else:
-                self.exibir(c)
+                print(c, end=' | ')
 
 
 os.system('cls')
@@ -38,4 +41,4 @@ a = int(input('Insira um número para começar: '))  # vide linha 21
 b = int(input('Insira um número para finalizar:'))
 print()
 primo = Primos(a, b)
-primo.encontrar_primos()
+primo.exibir()

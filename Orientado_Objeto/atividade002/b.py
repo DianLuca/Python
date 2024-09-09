@@ -11,9 +11,17 @@ class Intervalo:
     def __init__(self, inicio, fim):
         self.inicio = inicio
         self.fim = fim
+        
+    def exibir(self, inicio, fim):
+        print()
+        
 
 
 class Apresentar(Intervalo):
+    def __init__(self, inicio, fim):
+        self.inicio = inicio
+        self.fim = fim
+
     def exibir(self):
         for c in range(self.inicio, (self.fim + 1)):
             print(c, end=' - ')

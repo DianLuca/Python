@@ -16,17 +16,24 @@ class Numeros:
         self.segundo = segundo
         self.terceiro = terceiro
 
-    def exibir(self, apresentar):
-        print(apresentar, end=' | ')
+    def exibir(self, inicio, fim, primeiro, segundo, terceiro):
+        print('Sobrecarregando variável.')
 
 
 class Intervalo(Numeros):
-    def ignorar(self):
+    def __init__(self, inicio, fim, primeiro, segundo, terceiro):
+        self.inicio = inicio
+        self.fim = fim
+        self.primeiro = primeiro
+        self.segundo = segundo
+        self.terceiro = terceiro
+
+    def exibir(self):
         try:
             for c in range(int(self.inicio), (int(self.fim) + 1)):
                 if ((c == int(self.primeiro)) or (c == int(self.segundo)) or (c == int(self.terceiro))):
                     continue
-                self.exibir(c)
+                print(c, end= ' | ')
         except (TypeError, ValueError):
             print('Insira apenas valores numéricos! ')
 
@@ -45,4 +52,4 @@ terceiro = input('Insira o 3º número a ser ignorado: ')
 
 intervalo = Intervalo(inicial, final, primeiro, segundo, terceiro)
 print('A lista com os valores ignorados:')
-intervalo.ignorar()
+intervalo.exibir()

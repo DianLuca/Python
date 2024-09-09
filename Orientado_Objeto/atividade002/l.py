@@ -13,17 +13,21 @@ class Login:
         self.usuario = usuario
         self.senha = senha
 
-    def exibir(self, mensagem):
-        input(mensagem)
+    def exibir(self, usuario, senha):
+        print('Variável sobrecarregada!')
 
 
 class Verificacao(Login):
-    def verificar(self):
-        if self.usuario == 'admin' and senha == 'admin':
-            self.exibir('Acesso concedido! ')
+    def __init__(self, usuario, senha):
+        self.usuario = usuario
+        self.senha = senha
+
+    def exibir(self):
+        if self.usuario == 'admin' and self.senha == 'admin':
+            input('Acesso concedido! ')
             return True
         else:
-            self.exibir('Acesso negado! Tente novamente. ')
+            input('Acesso negado! Tente novamente. ')
             return False
 
 
@@ -32,6 +36,6 @@ while True:
     usuario = input('Insira o seu nome de usuário: ').strip()
     senha = input('Insira sua senha: ').strip()
     entrada = Verificacao(usuario, senha)
-    status = entrada.verificar()
+    status = entrada.exibir()
     if status == True:
         break

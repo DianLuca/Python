@@ -12,17 +12,22 @@ class Palavra():
     def __init__(self, entrada):
         self.palavra = entrada
 
-    def exibir(self, mensagem):
-        print(mensagem)
+    def exibir(self, entrada):
+        print('Sobrecarregando variável.')
 
 
 class Palindromo(Palavra):
-    def verificar(self):
+    def __init__(self, entrada):
+        self.palavra = entrada
+
+    def exibir(self):
         palindromo = self.palavra[::-1]
         if self.palavra == palindromo:
-            self.exibir(f'A palavra {self.palavra} é um palíndromo, pois {self.palavra} ao contrário: "{palindromo}" ficam iguais!')
+            print(
+                f'A palavra {self.palavra} é um palíndromo, pois {self.palavra} ao contrário: "{palindromo}" ficam iguais!')
         else:
-            self.exibir(f'A palavra {self.palavra} não é um palíndromo, pois {self.palavra} ao contrário: "{palindromo}" não são iguais!')
+            print(
+                f'A palavra {self.palavra} não é um palíndromo, pois {self.palavra} ao contrário: "{palindromo}" não são iguais!')
 
 
 os.system('cls')
@@ -31,5 +36,4 @@ print('-- VERIFICAÇÃO DE PALÍNDROMO --')  # Quando um nome ou uma frase é
 # igual mesmo ao contrário
 nome = input('Insira seu nome ou uma frase: ').strip().lower()
 palindromo = Palindromo(nome)
-palindromo.verificar()
-
+palindromo.exibir()

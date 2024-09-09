@@ -10,20 +10,24 @@ class Numeros:
     def __init__(self, inicio, fim):
         self.inicio = inicio
         self.fim = fim
-        
-    def exibir(self, valor):
-        print(f'\nO total de valores pares é: {valor}')
+
+    def exibir(self, inicio, fim):
+        print('Variável sobrecarregada!')
 
 
 class Pares(Numeros):
-    def par(self):
+    def __init__(self, inicio, fim):
+        self.inicio = inicio
+        self.fim = fim
+
+    def exibir(self):
         c_par = 0
         for c in range(self.inicio, (self.fim + 1)):
             if (c % 2 == 0):
                 c_par += 1
                 print(c, end=' | ')
-                
-        self.exibir(c_par)
+
+        print(f'\nO total de valores pares é: {c_par}')
 
 
 os.system('cls')
@@ -36,4 +40,4 @@ fim = int(input('Insira o maior número: '))
 print()
 print(f'Os números pares no intervalo entre {inicio} e {fim}, serão: ')
 numeros = Pares(inicio, fim)
-numeros.par()
+numeros.exibir()
