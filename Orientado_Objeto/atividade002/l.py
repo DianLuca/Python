@@ -14,7 +14,7 @@ class Login:
         self.senha = senha
 
     def exibir(self, mensagem):
-        print(mensagem)
+        input(mensagem)
 
 
 class Verificacao(Login):
@@ -23,7 +23,7 @@ class Verificacao(Login):
             self.exibir('Acesso concedido! ')
             return True
         else:
-            self.exibir('Acesso negado! Tente novamente')
+            self.exibir('Acesso negado! Tente novamente. ')
             return False
 
 
