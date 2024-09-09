@@ -4,19 +4,35 @@
 # Data: 03/09/2024
 # Faça um algoritmo que imprima a frase "estou em looping" e, em seguida,
 # solicite ao usuário digitar uma letra. Caso a letra seja o “f" finalize
-# a aplicação. Do contrário, imprima novamente a mesma frase até que o 
+# a aplicação. Do contrário, imprima novamente a mesma frase até que o
 # caractere “f" seja digitado.
 import os
 import time
 
 
-while True:
-    print('Estou em looping')
-    time.sleep(2)
-    print()
-    parada = input('Deseja finalizar o programa [f - sim]? ').lower()
-    
-    if  parada == 'f':
-        break
+class Operacao:
+    def __init__(self, parada):
+        self.parada = parada
 
-os.system('cls')
+    def limpar(self):
+        os.system('cls')
+
+
+class Funcionamento(Operacao):
+    def parar(self):
+        print('Estou em looping!')
+        time.sleep(2)
+        if self.parada != 'f':
+            return False, ''
+        else:
+            self.limpar()
+            return True, 'Encerrando looping!'
+
+
+while True:
+    parada = input('Deseja finalizar o programa [f - sim]? ').lower()
+    funcionamento = Funcionamento(parada)
+    finalizar, mensagem = funcionamento.parar()
+    if finalizar == True:
+        print(mensagem)
+        break
