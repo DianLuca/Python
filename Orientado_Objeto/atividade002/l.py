@@ -8,15 +8,30 @@
 import os
 
 
-os.system('cls')
+class Login:
+    def __init__(self, usuario, senha):
+        self.usuario = usuario
+        self.senha = senha
+
+    def exibir(self, mensagem):
+        print(mensagem)
+
+
+class Verificacao(Login):
+    def verificar(self):
+        if self.usuario == 'admin' and senha == 'admin':
+            self.exibir('Acesso concedido! ')
+            return True
+        else:
+            self.exibir('Acesso negado! Tente novamente')
+            return False
 
 
 while True:
-    usuario = input('Insira o seu nome de usuário: ')
-    senha = input('Insira sua senha: ')
-    
-    if (usuario == 'admin' and senha == 'admin'):
-        print('Acesso concedido!')
+    os.system('cls')
+    usuario = input('Insira o seu nome de usuário: ').strip()
+    senha = input('Insira sua senha: ').strip()
+    entrada = Verificacao(usuario, senha)
+    status = entrada.verificar()
+    if status == True:
         break
-    else: 
-        print('Acesso negado! Tente novamente')
