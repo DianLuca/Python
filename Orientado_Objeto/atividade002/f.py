@@ -19,8 +19,8 @@ class Numeros:
 class Primos(Numeros):
     def encontrar_primos(self):
         if self.inicio < 2:
-            print(f'Os números primos se iniciam a partir do número 2, portanto {
-                  self.inicio} passará a ser 2.')
+            print(f'Não existe número primo de {self.inicio}, portando '
+                  + f'adotaremos o menor mais próximo: 2')
             self.inicio = 2
         for c in range(self.inicio, (self.fim + 1)):  # O número 0 e 1 não são primos
             for i in range(self.inicio, c):  # O primeiro número primo é 2, então a >= 2
