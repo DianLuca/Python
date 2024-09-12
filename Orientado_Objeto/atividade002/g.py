@@ -23,13 +23,8 @@ class Primos(Numeros):
 
     def exibir(self):
         try:
-<<<<<<< HEAD
-            if self.inicio < 2:
-                print(f'Não existe número primo de {self.inicio}, portando '
-=======
             if int(self.inicio) < 2:
                 print(f'Não existe número primo de {int(self.inicio)}, portando '
->>>>>>> 209ad2551d906d77631dccae4239f87c4a23f5af
                       + f'adotaremos o menor mais próximo: 2.')
                 self.inicio = 2
             for c in range(int(self.inicio), (int(self.fim) + 1)):  # O número 0 e 1 não são primos

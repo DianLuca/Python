@@ -23,29 +23,17 @@ class Palindromo(Palavra):
     def exibir(self):
         palindromo = self.palavra[::-1]
         if self.palavra == palindromo:
-<<<<<<< HEAD
-            self.exibir(f'A palavra {self.palavra} é um palíndromo, pois {
-                        self.palavra} ao contrário: "{palindromo}" ficam iguais!')
-        else:
-            self.exibir(f'A palavra {self.palavra} não é um palíndromo, pois {
-                        self.palavra} ao contrário: "{palindromo}" não são iguais!')
-=======
             print(
                 f'A palavra {self.palavra} é um palíndromo, pois {self.palavra} ao contrário: "{palindromo}" ficam iguais!')
         else:
             print(
                 f'A palavra {self.palavra} não é um palíndromo, pois {self.palavra} ao contrário: "{palindromo}" não são iguais!')
->>>>>>> 209ad2551d906d77631dccae4239f87c4a23f5af
 
 
 os.system('cls')
 
 print('-- VERIFICAÇÃO DE PALÍNDROMO --')  # Quando um nome ou uma frase é
 # igual mesmo ao contrário
-nome = input('Insira seu nome ou uma frase: ').strip().lower()
+nome = input('Insira seu nome ou uma frase: ').strip().lower().replace(' ','')
 palindromo = Palindromo(nome)
-<<<<<<< HEAD
-palindromo.verificar()
-=======
 palindromo.exibir()
->>>>>>> 209ad2551d906d77631dccae4239f87c4a23f5af

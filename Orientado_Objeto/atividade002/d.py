@@ -11,13 +11,8 @@ class Numeros:
         self.inicio = inicio
         self.fim = fim
 
-<<<<<<< HEAD
-    def exibir(self, valor):
-        print(f'\nO total de valores pares é: {valor}')
-=======
     def exibir(self, inicio, fim):
         print('Variável sobrecarregada!')
->>>>>>> 209ad2551d906d77631dccae4239f87c4a23f5af
 
 
 class Pares(Numeros):
@@ -32,11 +27,7 @@ class Pares(Numeros):
                 c_par += 1
                 print(c, end=' | ')
 
-<<<<<<< HEAD
-        self.exibir(c_par)
-=======
         print(f'\nO total de valores pares é: {c_par}')
->>>>>>> 209ad2551d906d77631dccae4239f87c4a23f5af
 
 
 os.system('cls')
