@@ -34,6 +34,6 @@ os.system('cls')
 
 print('-- VERIFICAÇÃO DE PALÍNDROMO --')  # Quando um nome ou uma frase é
 # igual mesmo ao contrário
-nome = input('Insira seu nome ou uma frase: ').strip().lower()
+nome = input('Insira seu nome ou uma frase: ').strip().lower().replace(' ','')
 palindromo = Palindromo(nome)
 palindromo.exibir()
