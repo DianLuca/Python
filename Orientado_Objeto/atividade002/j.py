@@ -14,12 +14,15 @@ class Numeros:
         self.fim = fim
 
     def exibir(self, c_impar, somatorio):
-        print(f'\nExiste {c_impar} número(s) ímpar(es) nesse intervalo. '
-              + f'A soma de todos os valores é igual a: {somatorio}')
+        print('Sobrecarregando variável.')
 
 
 class Impares(Numeros):
-    def impar(self):
+    def __init__(self, inicio, fim):
+        self.inicio = inicio
+        self.fim = fim
+
+    def exibir(self):
         try:
             c_impar = 0
             somatorio = 0
@@ -28,7 +31,8 @@ class Impares(Numeros):
                     print(c, end=' | ')
                     c_impar += 1
                     somatorio += c
-            self.exibir(c_impar, somatorio)
+            print(f'\nExiste {c_impar} número(s) ímpar(es) nesse intervalo. '
+                  + f'A soma de todos os valores é igual a: {somatorio}')
         except (TypeError, ValueError):
             print('Insira apenas valores númericos e inteiros! ')
 
@@ -40,4 +44,4 @@ inicio = input('Insira um valor inteiro para iniciar o intervalo..: ')
 final = input('Insira um valor inteiro para finalizar o intervalo: ')
 print()
 impar = Impares(inicio, final)
-impar.impar()
+impar.exibir()

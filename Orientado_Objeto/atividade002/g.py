@@ -12,24 +12,32 @@ class Numeros:
         self.inicio = inicio
         self.fim = fim
 
-    def exibir(self, primos):
-        print(f'Esses são os números primos de {
-              self.inicio} a {self.fim}: {primos}')
+    def exibir(self, inicio, fim):
+        print(f'Sobrecarregando variável.')
 
 
 class Primos(Numeros):
-    def encontrar_primos(self):
+    def __init__(self, inicio, fim):
+        self.inicio = inicio
+        self.fim = fim
+
+    def exibir(self):
         try:
+<<<<<<< HEAD
             if self.inicio < 2:
                 print(f'Não existe número primo de {self.inicio}, portando '
+=======
+            if int(self.inicio) < 2:
+                print(f'Não existe número primo de {int(self.inicio)}, portando '
+>>>>>>> 209ad2551d906d77631dccae4239f87c4a23f5af
                       + f'adotaremos o menor mais próximo: 2.')
                 self.inicio = 2
-            for c in range(self.inicio, (self.fim + 1)):  # O número 0 e 1 não são primos
-                for i in range(self.inicio, c):  # O primeiro número primo é 2, então a >= 2
+            for c in range(int(self.inicio), (int(self.fim) + 1)):  # O número 0 e 1 não são primos
+                for i in range(int(self.inicio), c):  # O primeiro número primo é 2, então a >= 2
                     if c % i == 0:
                         break
                 else:
-                    self.exibir(c)
+                    print(c, end=' | ')
         except (TypeError, ValueError):
             print('Insira apenas valores numéricos. ')
 
@@ -42,4 +50,4 @@ a = input('Insira um número para começar: ')  # vide linha 21
 b = input('Insira um número para finalizar: ')
 print()
 primo = Primos(a, b)
-primo.encontrar_primos()
+primo.exibir()

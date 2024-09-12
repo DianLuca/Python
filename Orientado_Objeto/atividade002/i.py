@@ -13,23 +13,26 @@ import time
 class Operacao:
     def __init__(self, parada):
         self.parada = parada
-
-    def limpar(self):
-        os.system('cls')
+        
+    def parar(self, parada):
+        print()
 
 
 class Funcionamento(Operacao):
+    def __init__(self, parada):
+        self.parada = parada
+
     def parar(self):
         print('Estou em looping!')
         time.sleep(2)
         if self.parada != 'f':
             return False, ''
         else:
-            self.limpar()
             return True, 'Encerrando looping!'
 
 
 while True:
+    os.system('cls')
     parada = input('Deseja finalizar o programa [f - sim]? ').lower()
     funcionamento = Funcionamento(parada)
     finalizar, mensagem = funcionamento.parar()

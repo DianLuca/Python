@@ -12,13 +12,16 @@ class Numeros:
         self.inicio = inicio
         self.fim = fim
 
-    def exibir(self, soma_pares, c_par):
-        print(f'\nO somatório total do(s) {
-              c_par} número(s) par(es) foi de: {soma_pares}.')
+    def exibir(self, inicio, fim):
+        print('Sobrecargando variável!')
 
 
 class Pares(Numeros):
-    def pares(self):
+    def __init__(self, inicio, fim):
+        self.inicio = inicio
+        self.fim = fim
+
+    def exibir(self):
         soma_pares = 0
         c_par = 0
         for c in range(self.inicio, (self.fim + 1)):
@@ -27,7 +30,7 @@ class Pares(Numeros):
                 c_par += 1
                 print(c, end=' | ')
 
-        self.exibir(soma_pares, c_par)
+        print(f'\nA soma de todos os {c_par} números pares é: {soma_pares}.')
 
 
 os.system('cls')
@@ -39,4 +42,4 @@ b = int(input('Insira o maior número: '))
 print()
 
 numeros = Pares(a, b)
-numeros.pares()
+numeros.exibir()
