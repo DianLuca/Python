@@ -9,9 +9,8 @@ import os
 
 class Numeros:
     def __init__(self, inicio, fim):
-        self.inicio = inicio 
+        self.inicio = inicio
         self.fim = fim
-        
 
     def exibir(self, primos):
         print(f'Esses são os números primos de {
@@ -23,7 +22,7 @@ class Primos(Numeros):
         try:
             if self.inicio < 2:
                 print(f'Não existe número primo de {self.inicio}, portando '
-                    + f'adotaremos o menor mais próximo: 2.')
+                      + f'adotaremos o menor mais próximo: 2.')
                 self.inicio = 2
             for c in range(self.inicio, (self.fim + 1)):  # O número 0 e 1 não são primos
                 for i in range(self.inicio, c):  # O primeiro número primo é 2, então a >= 2

@@ -10,7 +10,7 @@ class Numeros:
     def __init__(self, inicio, fim):
         self.inicio = inicio
         self.fim = fim
-        
+
     def exibir(self, valor):
         print(f'\nO total de valores pares é: {valor}')
 
@@ -22,7 +22,7 @@ class Pares(Numeros):
             if (c % 2 == 0):
                 c_par += 1
                 print(c, end=' | ')
-                
+
         self.exibir(c_par)
 
 
