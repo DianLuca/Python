@@ -3,7 +3,7 @@
 ##
 
 <div align="center">
-  <h1>Iniciando em Python<img align="center" alt="Dian-PYTHON" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"></h1>
+  <h1>Iniciando em Python   <img align="center" alt="Dian-PYTHON" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"></h1>
   <p>Este são os meus primeiros comandos em Python. Estou aprendendo os conceitos básicos da linguagem e este repositório contém os scripts que estou desenvolvendo durante o meu aprendizado. O objetivo deste projeto é me familiarizar com a sintaxe do Python, estruturas de controle de fluxo, tipos de dados, funções e classes.</p>
 </div>
   
